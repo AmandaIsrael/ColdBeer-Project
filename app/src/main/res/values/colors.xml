@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#00C4E0</color>
+    <color name="cinzaText">#3C3C3C</color>
+    <color name="azulEscuro">#007391</color>
+    <color name="fundoLogin">#DDDDDD</color>
+    <color name="laranja">#FD7A01</color>
+    <color name="azulClaro">#00C4E0</color>
+</resources>

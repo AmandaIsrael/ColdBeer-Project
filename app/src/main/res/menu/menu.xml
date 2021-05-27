@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/carrinho"
+        android:icon="@drawable/carrinho"
+        app:showAsAction="always"
+        android:title="" />
+    <item
+        android:id="@+id/paginaPrincipal"
+        android:title="@string/telaInicial" />
+    <item
+        android:id="@+id/perfilUsuario"
+        android:title="@string/perfilUsuario" />
+    <item
+        android:id="@+id/kits"
+        android:title="@string/kits" />
+    <item
+        android:id="@+id/cervejas"
+        android:title="@string/cervejas" />
+    <item
+        android:id="@+id/sair"
+        android:title="@string/sair" />
+</menu>

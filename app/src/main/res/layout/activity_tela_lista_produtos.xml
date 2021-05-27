@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundoLogin">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".TelaListaProdutos">
+
+        <View
+            android:id="@+id/viewPagamento2"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/borda_sombra"
+            app:layout_constraintEnd_toStartOf="@+id/guideline11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBusca" />
+
+        <View
+            android:id="@+id/viewPagamento5"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/borda_sombra"
+            android:onClick="item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toBottomOf="@+id/txtBusca" />
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"></include>
+
+        <EditText
+            android:id="@+id/txtBusca"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginRight="70dp"
+            android:background="@drawable/caixa_texto"
+            android:ems="10"
+            android:hint="@string/vazia"
+            android:inputType="textPersonName"
+            android:paddingLeft="10dp"
+            android:paddingRight="35dp"
+            android:paddingBottom="4dp"
+            android:textColor="@color/design_default_color_on_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <ImageView
+            android:id="@+id/btnPesquisar"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtBusca"
+            app:layout_constraintEnd_toEndOf="@+id/txtBusca"
+            app:layout_constraintTop_toTopOf="@+id/txtBusca"
+            app:srcCompat="@drawable/ic_baseline_search_24" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="@+id/viewPagamento2"
+            app:layout_constraintStart_toStartOf="@+id/viewPagamento2"
+            app:layout_constraintTop_toTopOf="@+id/viewPagamento2"
+            app:srcCompat="@drawable/kits4" />
+
+        <TextView
+            android:id="@+id/txtNome1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Baldinho Brooklyn"
+            android:textColor="@color/cinzaText"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/viewPagamento2"
+            app:layout_constraintStart_toStartOf="@+id/viewPagamento2"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintEnd_toEndOf="@+id/viewPagamento5"
+            app:layout_constraintStart_toStartOf="@+id/viewPagamento5"
+            app:layout_constraintTop_toTopOf="@+id/viewPagamento5"
+            app:srcCompat="@drawable/garrafas_fofas" />
+
+        <TextView
+            android:id="@+id/txtPreco1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R$ 150.00"
+            android:textColor="@color/cinzaText"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/viewPagamento2"
+            app:layout_constraintStart_toStartOf="@+id/viewPagamento2"
+            app:layout_constraintTop_toBottomOf="@+id/txtNome1" />
+
+        <TextView
+            android:id="@+id/txtNome2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Garrafinhas Fofas"
+            android:textColor="@color/cinzaText"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/viewPagamento5"
+            app:layout_constraintStart_toStartOf="@+id/viewPagamento5"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <TextView
+            android:id="@+id/txtPreco2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R$ 100.00"
+            android:textColor="@color/cinzaText"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/viewPagamento5"
+            app:layout_constraintStart_toStartOf="@+id/viewPagamento5"
+            app:layout_constraintTop_toBottomOf="@+id/txtNome2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
