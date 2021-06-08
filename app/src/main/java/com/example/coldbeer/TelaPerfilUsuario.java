@@ -3,6 +3,7 @@ package com.example.coldbeer;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,22 +12,17 @@ import android.view.MenuItem;
 import androidx.appcompat.widget.Toolbar;
 
 
-public class PerfilUsuario extends AppCompatActivity {
-    private Intent telaCarrinho;
-    private Intent telaInicio;
-    private Intent telaProduto;
-    private Intent telaLogin;
+public class TelaPerfilUsuario extends AppCompatActivity {
+
+    private TelasMenu Actual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_usuario);
+
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
-        telaCarrinho = new Intent(this, TelaCarrinho.class);
-        telaInicio = new Intent(this, TelaInicio.class);
-        telaProduto = new Intent(this, TelaListaProdutos.class);
-        telaLogin = new Intent(this, TelaLogin.class);
     }
 
 
@@ -37,22 +33,27 @@ public class PerfilUsuario extends AppCompatActivity {
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
             case R.id.paginaPrincipal:
-                startActivity(telaInicio);
+                Intent Inicial = Actual.TelaPrincipal(this);
+                startActivity(Inicial);
                 return true;
             case R.id.kits:
             case R.id.cervejas:
-                startActivity(telaProduto);
+                Intent Product = Actual.Kits(this);
+                startActivity(Product);
                 return true;
             case R.id.sair:
-                startActivity(telaLogin);
+                Intent Login = Actual.Out(this);
+                startActivity(Login);
                 return true;
             case R.id.carrinho:
-                startActivity(telaCarrinho);
+                Intent Cart = Actual.Cart(this);
+                startActivity(Cart);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
