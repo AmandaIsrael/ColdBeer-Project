@@ -14,7 +14,7 @@
         <activity android:name=".TelaFinalizarCompra" />
         <activity android:name=".TelaCarrinho" />
         <activity android:name=".TelaInicio" />
-        <activity android:name=".PerfilUsuario" />
+        <activity android:name=".TelaPerfilUsuario" />
         <activity android:name=".TelaCadastro" />
         <activity android:name=".TelaLogin">
             <intent-filter>

@@ -3,10 +3,10 @@ package com.example.coldbeer;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,18 +14,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.Console;
-
 public class TelaCarrinho extends AppCompatActivity {
-    private Intent telaPerfilUsuario;
-    private Intent telaInicio;
-    private Intent telaProduto;
-    private Intent telaLogin;
+
+    private TelasMenu Actual;
+
     private TextView item1;
     private TextView subtotal;
     private TextView valorUnit;
-    private ImageView aumentar;
-    private ImageView diminuir;
 
 
     @Override
@@ -36,15 +31,13 @@ public class TelaCarrinho extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         TextView txtValorTotal = findViewById(R.id.txtTotal);
         txtValorTotal.setPaintFlags(txtValorTotal.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        telaPerfilUsuario = new Intent(this, PerfilUsuario.class);
-        telaInicio = new Intent(this, TelaInicio.class);
-        telaProduto = new Intent(this, TelaListaProdutos.class);
-        telaLogin = new Intent(this, TelaLogin.class);
+
         item1 = findViewById(R.id.txtQuantidade);
         subtotal = findViewById(R.id.txtSubtotal);
         valorUnit = findViewById(R.id.txtPrecoUnit);
-        aumentar = findViewById(R.id.btnAumentar);
-        diminuir = findViewById(R.id.btnDiminuir);
+
+        ImageView aumentar = findViewById(R.id.btnAumentar);
+        ImageView diminuir = findViewById(R.id.btnDiminuir);
 
         aumentar.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -85,22 +78,27 @@ public class TelaCarrinho extends AppCompatActivity {
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
             case R.id.paginaPrincipal:
-                startActivity(telaInicio);
+                Intent Inicial = Actual.TelaPrincipal(this);
+                startActivity(Inicial);
                 return true;
             case R.id.kits:
             case R.id.cervejas:
-                startActivity(telaProduto);
+                Intent Product = Actual.Kits(this);
+                startActivity(Product);
                 return true;
             case R.id.sair:
-                startActivity(telaLogin);
+                Intent Login = Actual.Out(this);
+                startActivity(Login);
                 return true;
             case R.id.perfilUsuario:
-                startActivity(telaPerfilUsuario);
+                Intent UserProfile = Actual.perfUser(this);
+                startActivity(UserProfile);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">ColdBeer</string>
-    <string name="txtEmail">E-mail</string>
-    <string name="txtSenha">Senha</string>
+
     <string name="btnEntrar">Entrar</string>
     <string name="btnCadastrar">Cadastrar</string>
+
+    <string name="txtEmail">E-mail</string>
+    <string name="txtSenha">Senha</string>
     <string name="txtNome">Nome</string>
     <string name="txtTelefone">Telefone</string>
     <string name="txtIdade">Idade</string>
@@ -11,6 +13,8 @@
     <string name="txtNumero">Número</string>
     <string name="txtComplemento">Complemento</string>
     <string name="txtBairro">Bairro</string>
+
+
     <string name="telaInicial">Tela Inicial</string>
     <string name="perfilUsuario">Perfil do Usuário</string>
     <string name="kits">Kits</string>

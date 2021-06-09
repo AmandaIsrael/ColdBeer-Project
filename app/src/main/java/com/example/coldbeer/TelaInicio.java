@@ -3,6 +3,7 @@ package com.example.coldbeer;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,21 +12,16 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class TelaInicio extends AppCompatActivity {
-    private Intent telaCarrinho;
-    private Intent telaProduto;
-    private Intent telaLogin;
-    private Intent perfilUser;
+
+    private TelasMenu Actual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicio);
+
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
-        perfilUser = new Intent(this, PerfilUsuario.class);
-        telaCarrinho = new Intent(this, TelaCarrinho.class);
-        telaProduto = new Intent(this, TelaListaProdutos.class);
-        telaLogin = new Intent(this, TelaLogin.class);
     }
 
     @Override
@@ -40,22 +36,27 @@ public class TelaInicio extends AppCompatActivity {
         startActivity(kits);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
             case R.id.kits:
             case R.id.cervejas:
-                startActivity(telaProduto);
+                Intent Product = Actual.Kits(this);
+                startActivity(Product);
                 return true;
             case R.id.sair:
-                startActivity(telaLogin);
+                Intent Login = Actual.Out(this);
+                startActivity(Login);
                 return true;
             case R.id.carrinho:
-                startActivity(telaCarrinho);
+                Intent Cart = Actual.Cart(this);
+                startActivity(Cart);
                 return true;
             case R.id.perfilUsuario:
-                startActivity(perfilUser);
+                Intent UserProfile = Actual.perfUser(this);
+                startActivity(UserProfile);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
