@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".TelaFinalizarCompra">
 
         <View
@@ -40,14 +40,14 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar"></include>
+            layout="@layout/toolbar" />
 
         <TextView
             android:id="@+id/labelTituloEndereco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Endereço de Entrega"
+            android:text="@string/endereço_de_entrega"
             android:textColor="@color/laranja"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Opções de Pagamento"
+            android:text="@string/Opções_de_pagamento"
             android:textColor="@color/laranja"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -90,7 +90,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"
-            android:text="Rua Jorge Lacerda"
+            android:text="@string/Rua"
             android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
             app:layout_constraintTop_toBottomOf="@+id/labelTituloEndereco" />
@@ -102,7 +102,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
-            android:text="42"
+            android:text="@string/Numero_casa_finalizarCompra"
             android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toEndOf="@+id/txtRua"
             app:layout_constraintTop_toBottomOf="@+id/labelTituloEndereco" />
@@ -114,7 +114,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
-            android:text="Cancelli"
+            android:text="@string/bairro_finalizar_compra"
             android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
             app:layout_constraintTop_toBottomOf="@+id/txtRua" />
@@ -126,7 +126,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
-            android:text="Apto 12, bloco A"
+            android:text="@string/apto_finalizar_compra"
             android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
             app:layout_constraintTop_toBottomOf="@+id/txtBairro" />
@@ -138,7 +138,7 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/botao"
             android:onClick="telaAlterarEndereco"
-            android:text="Alterar"
+            android:text="@string/alterar"
             android:textColor="@color/design_default_color_background"
             app:layout_constraintEnd_toEndOf="@+id/viewEndereco"
             app:layout_constraintHorizontal_bias="0.89"
@@ -152,7 +152,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"
-            android:text="Cartão"
+            android:text="@string/opção_pagamento_2"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
             app:layout_constraintTop_toBottomOf="@+id/labelTituloPagamento" />
 
@@ -163,7 +163,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
-            android:text="Dinheiro"
+            android:text="@string/opção_pagamento"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
             app:layout_constraintTop_toBottomOf="@+id/checkCartao" />
 
@@ -175,12 +175,13 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="50dp"
             android:ems="10"
-            android:hint="Troco"
+            android:hint="@string/troco"
             android:inputType="numberDecimal"
             android:textColor="@color/colorPrimary"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/checkDinheiro"
-            app:layout_constraintTop_toBottomOf="@+id/labelTituloPagamento" />
+            app:layout_constraintTop_toBottomOf="@+id/labelTituloPagamento"
+            android:autofillHints="@string/troco" />
 
         <TextView
             android:id="@+id/labelSubtotal"
@@ -189,7 +190,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="16dp"
-            android:text="Subtotal: R$"
+            android:text="@string/subtotal_finalizar_compra"
             android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
             app:layout_constraintTop_toBottomOf="@+id/viewPagamento" />
@@ -201,7 +202,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
-            android:text="Frete: R$"
+            android:hint="@string/frete_finalizar_compra"
+            android:text="@string/frete_finalizar_compra"
             android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
             app:layout_constraintTop_toBottomOf="@+id/labelSubtotal" />
@@ -213,7 +215,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
-            android:text="Total: R$"
+            android:text="@string/total_finalizar_compra"
             android:textColor="@color/laranja"
             app:layout_constraintStart_toStartOf="@+id/guideline8"
             app:layout_constraintTop_toBottomOf="@+id/labelFrete" />
@@ -225,7 +227,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="8dp"
-            android:text="205.00"
+            android:text="@string/preço_total_finalizar_compra"
             android:textColor="@color/laranja"
             app:layout_constraintStart_toEndOf="@+id/labelTotal"
             app:layout_constraintTop_toBottomOf="@+id/labelFrete" />
@@ -237,7 +239,7 @@
             android:layout_marginTop="120dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/botao"
-            android:text="Comprar"
+            android:text="@string/comprar"
             android:textColor="@color/design_default_color_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
@@ -252,7 +254,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="16dp"
-            android:text="200.00"
+            android:text="@string/Subtotal_Total_finalizar_compra"
             android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toEndOf="@+id/labelSubtotal"
             app:layout_constraintTop_toBottomOf="@+id/viewPagamento" />
@@ -264,7 +266,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="8dp"
-            android:text="5.00"
+            android:text="@string/Total_frete_finalizar_compra"
             android:textColor="@color/colorPrimary"
             app:layout_constraintStart_toEndOf="@+id/labelFrete"
             app:layout_constraintTop_toBottomOf="@+id/txtSubtotal" />

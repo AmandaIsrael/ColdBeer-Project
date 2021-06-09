@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/back"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".TelaLogin">
 
         <ImageView
@@ -20,7 +20,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logo"
+            android:contentDescription="@string/logo_da_cervejaria_cold_bear" />
 
         <EditText
             android:id="@+id/txtEmail"
@@ -37,7 +38,8 @@
             android:textColorHint="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/imgLogo" />
+            app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+            android:autofillHints="@string/txtEmail" />
 
         <EditText
             android:id="@+id/txtSenha"
@@ -50,13 +52,13 @@
             android:inputType="textPassword"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:password="true"
             android:singleLine="false"
             android:textColor="@android:color/background_light"
             android:textColorHint="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline3"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/txtEmail"
+            android:autofillHints="@string/txtSenha" />
 
         <Button
             android:id="@+id/btnEntrar"
@@ -64,6 +66,7 @@
             android:layout_height="46dp"
             android:layout_marginStart="70dp"
             android:layout_marginLeft="70dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="20dp"
@@ -75,7 +78,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline"
             app:layout_constraintHorizontal_bias="0.7"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSenha" />
 
         <Button
             android:id="@+id/btnAtualizar"
@@ -83,7 +87,7 @@
             android:layout_height="46dp"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="70dp"
             android:layout_marginRight="70dp"
             android:layout_marginBottom="20dp"
@@ -118,6 +122,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.85" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/amanda_israel_e_roberta_alcantara"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnEntrar"
+            app:layout_constraintVertical_bias="0.53" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

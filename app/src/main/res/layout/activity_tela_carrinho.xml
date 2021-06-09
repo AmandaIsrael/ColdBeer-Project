@@ -9,12 +9,12 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".TelaCarrinho">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"></include>
+        layout="@layout/toolbar" />
 
     <EditText
         android:id="@+id/txtBusca"
@@ -36,7 +36,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:paddingEnd="35dp"
+        android:paddingStart="10dp"
+        android:autofillHints="@string/Busca_carrinho" />
 
     <ImageView
         android:id="@+id/btnPesquisar"
@@ -49,7 +52,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/txtBusca"
         app:layout_constraintEnd_toEndOf="@+id/txtBusca"
         app:layout_constraintTop_toTopOf="@+id/txtBusca"
-        app:srcCompat="@drawable/ic_baseline_search_24" />
+        app:srcCompat="@drawable/ic_baseline_search_24"
+        android:contentDescription="@string/pesquisar_produtos" />
 
     <View
         android:id="@+id/view1"
@@ -84,14 +88,15 @@
         app:layout_constraintStart_toStartOf="@+id/view1"
         app:layout_constraintTop_toTopOf="@+id/view1"
         app:layout_constraintVertical_bias="0.637"
-        app:srcCompat="@drawable/cesta_cervejaequeijo" />
+        app:srcCompat="@drawable/cesta_cervejaequeijo"
+        android:contentDescription="@string/imagem_do_produto" />
 
     <TextView
         android:id="@+id/txtKit1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Cesta cerveja e queijo"
+        android:text="@string/text_kit1_carrinho"
         android:textColor="@color/laranja"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -110,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Valor unitário: R$"
+        android:text="@string/valor_unitario01_carrinho"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/txtKit1" />
@@ -134,17 +139,17 @@
         android:layout_width="42dp"
         android:layout_height="33dp"
         android:layout_marginTop="15dp"
-        android:autoText="false"
-        android:editable="false"
         android:ems="10"
         android:gravity="center_horizontal"
         android:inputType="number"
-        android:text="1"
+        android:text="@string/preço_default02_carrinho"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/btnDiminuir"
-        app:layout_constraintTop_toBottomOf="@+id/labelValor" />
+        app:layout_constraintTop_toBottomOf="@+id/labelValor"
+        android:autofillHints="@string/quantidade1"
+        tools:ignore="LabelFor" />
 
     <ImageView
         android:id="@+id/btnAumentar"
@@ -155,7 +160,8 @@
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toEndOf="@+id/txtQuantidade"
         app:layout_constraintTop_toBottomOf="@+id/labelValor"
-        app:srcCompat="@drawable/ic_baseline_add_circle_24" />
+        app:srcCompat="@drawable/ic_baseline_add_circle_24"
+        android:contentDescription="@string/aumentar_quantidade" />
 
     <ImageView
         android:id="@+id/btnDiminuir"
@@ -164,14 +170,15 @@
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/labelValor"
-        app:srcCompat="@drawable/ic_baseline_remove_circle_24" />
+        app:srcCompat="@drawable/ic_baseline_remove_circle_24"
+        android:contentDescription="@string/diminuir_quantidade" />
 
     <TextView
         android:id="@+id/labelSubtotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Subtotal: R$"
+        android:text="@string/subtotal_01_carrinho"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/txtQuantidade" />
@@ -184,10 +191,11 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="15dp"
         android:inputType="number"
-        android:text="100.00"
+        android:text="@string/preço_unitario01_carrinho"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/labelValor"
-        app:layout_constraintTop_toBottomOf="@+id/txtKit1" />
+        app:layout_constraintTop_toBottomOf="@+id/txtKit1"
+        tools:ignore="TextViewEdits" />
 
     <View
         android:id="@+id/view2"
@@ -222,14 +230,15 @@
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2"
         app:layout_constraintVertical_bias="0.637"
-        app:srcCompat="@drawable/garrafas_fofas" />
+        app:srcCompat="@drawable/garrafas_fofas"
+        android:contentDescription="@string/imagem_produto02_carrinho" />
 
     <TextView
         android:id="@+id/txtKit2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Cervejas artesanais fofas"
+        android:text="@string/Titulo_produto_carrinho"
         android:textColor="@color/laranja"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -241,7 +250,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Valor unitário: R$"
+        android:text="@string/valor_unitario_carrinho"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/txtKit2" />
@@ -254,12 +263,14 @@
         android:ems="10"
         android:gravity="center_horizontal"
         android:inputType="number"
-        android:text="1"
+        android:text="@string/quantidade_default_carrinho"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorPrimary"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/btnDiminuir2"
-        app:layout_constraintTop_toBottomOf="@+id/labelValor2" />
+        app:layout_constraintTop_toBottomOf="@+id/labelValor2"
+        android:autofillHints="@string/quantidade2"
+        tools:ignore="LabelFor" />
 
     <ImageView
         android:id="@+id/btnAumentar2"
@@ -270,7 +281,8 @@
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toEndOf="@+id/txtQuantidade2"
         app:layout_constraintTop_toBottomOf="@+id/labelValor2"
-        app:srcCompat="@drawable/ic_baseline_add_circle_24" />
+        app:srcCompat="@drawable/ic_baseline_add_circle_24"
+        android:contentDescription="@string/aumentar_quantidade" />
 
     <ImageView
         android:id="@+id/btnDiminuir2"
@@ -279,14 +291,15 @@
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/labelValor2"
-        app:srcCompat="@drawable/ic_baseline_remove_circle_24" />
+        app:srcCompat="@drawable/ic_baseline_remove_circle_24"
+        android:contentDescription="@string/diminuir_quantidade" />
 
     <TextView
         android:id="@+id/labelSubtotal2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Subtotal: R$"
+        android:text="@string/Subtotal_carrinho"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/txtQuantidade2" />
@@ -298,7 +311,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="15dp"
-        android:text="100.00"
+        android:text="@string/preço02_carrinho"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/labelValor2"
         app:layout_constraintTop_toBottomOf="@+id/txtKit2" />
@@ -310,7 +323,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="15dp"
-        android:text="100.00"
+        android:text="@string/Subtotal02_carrinho"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/labelSubtotal2"
         app:layout_constraintTop_toBottomOf="@+id/txtQuantidade2" />
@@ -323,7 +336,7 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/botao"
         android:onClick="telaComprar"
-        android:text="Confirmar"
+        android:text="@string/confirmar"
         android:textColor="@color/design_default_color_on_primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -338,7 +351,7 @@
         android:layout_marginStart="6dp"
         android:layout_marginLeft="6dp"
         android:layout_marginTop="20dp"
-        android:text="Total: R$"
+        android:text="@string/total_r"
         android:textColor="@color/laranja"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
@@ -350,7 +363,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="20dp"
-        android:text="200,00"
+        android:text="@string/Total_carrinho"
         android:textColor="@color/laranja"
         app:layout_constraintStart_toEndOf="@+id/labelTotal"
         app:layout_constraintTop_toBottomOf="@+id/view2" />
@@ -362,11 +375,13 @@
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="15dp"
+        android:hint="@string/preço01_carrinho"
         android:inputType="number"
-        android:text="100.00"
+        android:text="@string/preço01_carrinho"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toEndOf="@+id/labelSubtotal"
-        app:layout_constraintTop_toBottomOf="@+id/txtQuantidade" />
+        app:layout_constraintTop_toBottomOf="@+id/txtQuantidade"
+        tools:ignore="TextViewEdits" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

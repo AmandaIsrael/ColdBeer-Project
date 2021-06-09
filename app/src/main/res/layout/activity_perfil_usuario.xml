@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".TelaPerfilUsuario">
 
         <EditText
@@ -29,7 +29,8 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints="@string/txtEmail" />
 
         <EditText
             android:id="@+id/txtSenha"
@@ -47,7 +48,8 @@
             android:textColorHint="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/txtEmail"
+            android:autofillHints="@string/txtSenha" />
 
         <EditText
             android:id="@+id/txtNome"
@@ -65,7 +67,8 @@
             android:textColorHint="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/txtSenha" />
+            app:layout_constraintTop_toBottomOf="@+id/txtSenha"
+            android:autofillHints="@string/txtNome" />
 
         <EditText
             android:id="@+id/txtTelefone"
@@ -83,7 +86,8 @@
             android:textColorHint="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/txtNome" />
+            app:layout_constraintTop_toBottomOf="@+id/txtNome"
+            android:autofillHints="@string/txtTelefone" />
 
         <EditText
             android:id="@+id/txtIdade"
@@ -101,7 +105,8 @@
             android:textColorHint="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/txtTelefone" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTelefone"
+            android:autofillHints="@string/txtIdade" />
 
         <EditText
             android:id="@+id/txtRua"
@@ -119,7 +124,8 @@
             android:textColorHint="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/txtIdade" />
+            app:layout_constraintTop_toBottomOf="@+id/txtIdade"
+            android:autofillHints="@string/txtRua" />
 
         <EditText
             android:id="@+id/txtNumero"
@@ -137,7 +143,8 @@
             android:textColorHint="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/txtRua" />
+            app:layout_constraintTop_toBottomOf="@+id/txtRua"
+            android:autofillHints="@string/txtNumero" />
 
         <EditText
             android:id="@+id/txtBairro"
@@ -155,7 +162,8 @@
             android:textColorHint="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/txtNumero" />
+            app:layout_constraintTop_toBottomOf="@+id/txtNumero"
+            android:autofillHints="@string/txtBairro" />
 
         <EditText
             android:id="@+id/txtComplemento"
@@ -173,7 +181,8 @@
             android:textColorHint="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/txtBairro" />
+            app:layout_constraintTop_toBottomOf="@+id/txtBairro"
+            android:autofillHints="@string/txtComplemento" />
 
         <Button
             android:id="@+id/btnAtualizar"
@@ -182,7 +191,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/botao"
-            android:text="Atualizar"
+            android:text="@string/atualizar"
             android:textColor="@android:color/background_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -204,8 +213,9 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.85" />
 
-        <include layout="@layout/toolbar"
-            android:id="@+id/toolbar"></include>
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

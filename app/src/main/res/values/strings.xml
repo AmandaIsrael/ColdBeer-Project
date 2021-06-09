@@ -14,7 +14,6 @@
     <string name="txtComplemento">Complemento</string>
     <string name="txtBairro">Bairro</string>
 
-
     <string name="telaInicial">Tela Inicial</string>
     <string name="perfilUsuario">Perfil do Usuário</string>
     <string name="kits">Kits</string>
@@ -22,5 +21,83 @@
     <string name="meusPedidos">Meus Pedidos</string>
     <string name="sair">Sair</string>
     <string name="vazia"> </string>
+
+    <string name="logo_da_cervejaria_cold_bear">Logo da cervejaria Cold Bear</string>
+    <string name="amanda_israel_e_roberta_alcantara">Amanda Israel e Roberta Alcantara</string>
+    <string name="atualizar">Atualizar</string>
+
+    <string name="busca_tela_item">busca_tela_item</string>
+    <string name="_5x350_ml">5x350 ml</string>
+    <string name="suecia">Suécia</string>
+    <string name="porcentagem">8%</string>
+    <string name="preço">100.00</string>
+    <string name="descrição">Descrição:</string>
+    <string name="volume">Volume:</string>
+    <string name="origem">Origem:</string>
+    <string name="teor_alcoolico">Teor alcoólico:</string>
+    <string name="price02">Preço: R$</string>
+    <string name="imagem">Garrafinhas Fofas</string>
+    <string name="colocar_o_item_no_carrinho">Colocar o item no carrinho</string>
+    <string name="descricao_produto">Esse kit é uma ótima opção para quem quer gastar pouco e encantar muito! Nele vem 5 garrafas de 350ml da cerveja exclusiva Garrafinhas Fofinhas, com os sabores framboesa, maracujá, pomelo, morango e uva.</string>
+    <string name="descrição_produto_imagemview">Garrafas rosas de diversos sabores</string>
+    <string name="pesquisar_produtos">Pesquisar produtos</string>
+
+    <string name="total_r">Total: R$</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="endereço_de_entrega">Endereço de Entrega</string>
+    <string name="Opções_de_pagamento">Opções de Pagamento</string>
+    <string name="Rua">Rua Jorge Lacerda</string>
+    <string name="Numero_casa_finalizarCompra">42</string>
+    <string name="bairro_finalizar_compra">Cancelli</string>
+    <string name="apto_finalizar_compra">Apto 12, bloco A</string>
+    <string name="alterar">Alterar</string>
+    <string name="opção_pagamento">Dinheiro</string>
+    <string name="opção_pagamento_2">Cartão</string>
+    <string name="troco">Troco</string>
+    <string name="subtotal_finalizar_compra">Subtotal: R$</string>
+    <string name="frete_finalizar_compra">Frete: R$</string>
+    <string name="total_finalizar_compra">Total: R$</string>
+    <string name="preço_total_finalizar_compra">205.00</string>
+    <string name="comprar">Comprar</string>
+    <string name="Subtotal_Total_finalizar_compra">200.00</string>
+    <string name="Total_frete_finalizar_compra">5.00</string>
+
+    <string name="Busca_carrinho">Busca</string>
+    <string name="preço01_carrinho">100.00</string>
+    <string name="Total_carrinho">200,00</string>
+    <string name="preço02_carrinho">100.00</string>
+    <string name="Subtotal02_carrinho">100.00</string>
+    <string name="Subtotal_carrinho">Subtotal: R$</string>
+    <string name="aumentar_quantidade">Aumentar quantidade</string>
+    <string name="quantidade_default_carrinho">1</string>
+    <string name="diminuir_quantidade">diminuir_quantidade</string>
+    <string name="quantidade2">quantidade2_carrinho</string>
+    <string name="valor_unitario_carrinho">Valor unitário: R$</string>
+    <string name="Titulo_produto_carrinho">Cervejas artesanais fofas</string>
+    <string name="imagem_produto02_carrinho">Imagem Produto</string>
+    <string name="preço_unitario01_carrinho">100.00</string>
+    <string name="subtotal_01_carrinho">Subtotal: R$</string>
+    <string name="preço_default02_carrinho">1</string>
+    <string name="quantidade1">quantidade1</string>
+    <string name="valor_unitario01_carrinho">Valor unitário: R$</string>
+    <string name="text_kit1_carrinho">Cesta cerveja e queijo</string>
+
+    <string name="imagem_do_produto">Imagem do produto</string>
+    <string name="busca_inicio">Busca_inicio</string>
+    <string name="compartilhe_no_whatsapp">Compartilhe no WhatsApp</string>
+    <string name="compartilhe_no_twitter">Compartilhe no Twitter</string>
+    <string name="compartilhe_no_instagram">Compartilhe no Instagram</string>
+    <string name="imagem_de_cervejas_inicio">Imagem de Cervejas</string>
+    <string name="imagem_kits_inicio">Imagem Kits</string>
+
+    <string name="preço02_tela_produtos">R$ 100.00</string>
+    <string name="Imagem02_tela_produtos">Garrafinhas Fofas</string>
+    <string name="preço01_tela_produtos">R$ 150.00</string>
+    <string name="imagem_produto_tela_roduto">Imagem Produto</string>
+    <string name="Descrição_img01_tela_produtos">Baldinho Brooklyn</string>
+    <string name="imagem_produto01_tela_produtos">Imagem Produto</string>
+    <string name="pesquisar_produtos_tela_produtos">Pesquisar Produtos</string>
+    <string name="busca_tela_produtos">busca_tela_produtos</string>
+
 
 </resources>

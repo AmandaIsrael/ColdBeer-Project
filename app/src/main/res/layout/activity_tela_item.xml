@@ -27,7 +27,7 @@
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/toolbar"></include>
+            layout="@layout/toolbar" />
 
         <EditText
             android:id="@+id/txtBusca"
@@ -42,14 +42,17 @@
             android:ems="10"
             android:hint="@string/vazia"
             android:inputType="textPersonName"
-            android:paddingLeft="10dp"
-            android:paddingRight="35dp"
             android:paddingBottom="4dp"
             android:textColor="@color/design_default_color_on_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:paddingEnd="35dp"
+            android:paddingStart="10dp"
+            android:autofillHints="@string/busca_tela_item"
+            android:paddingRight="35dp"
+            android:paddingLeft="10dp" />
 
         <ImageView
             android:id="@+id/btnPesquisar"
@@ -57,12 +60,13 @@
             android:layout_height="22dp"
             android:layout_marginTop="6dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
             android:layout_marginBottom="6dp"
             app:layout_constraintBottom_toBottomOf="@+id/txtBusca"
             app:layout_constraintEnd_toEndOf="@+id/txtBusca"
             app:layout_constraintTop_toTopOf="@+id/txtBusca"
-            app:srcCompat="@drawable/ic_baseline_search_24" />
+            app:srcCompat="@drawable/ic_baseline_search_24"
+            android:contentDescription="@string/pesquisar_produtos"
+            android:layout_marginRight="10dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline15"
@@ -86,13 +90,14 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toTopOf="@+id/view"
-            app:srcCompat="@drawable/garrafas_fofas" />
+            app:srcCompat="@drawable/garrafas_fofas"
+            android:contentDescription="@string/descrição_produto_imagemview" />
 
         <TextView
             android:id="@+id/txtTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Garrafinhas Fofas"
+            android:text="@string/imagem"
             android:textColor="@color/laranja"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -105,124 +110,124 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
-            android:text="Preço: R$"
+            android:text="@string/price02"
             android:textColor="@color/cinzaText"
             app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+            android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/labelTeorAlc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
-            android:text="Teor alcoólico:"
+            android:text="@string/teor_alcoolico"
             android:textColor="@color/cinzaText"
             app:layout_constraintStart_toStartOf="@+id/guideline15"
-            app:layout_constraintTop_toBottomOf="@+id/labelPreco" />
+            app:layout_constraintTop_toBottomOf="@+id/labelPreco"
+            android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/labelOrigem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
-            android:text="Origem:"
+            android:text="@string/origem"
             android:textColor="@color/cinzaText"
             app:layout_constraintStart_toStartOf="@+id/guideline15"
-            app:layout_constraintTop_toBottomOf="@+id/labelTeorAlc" />
+            app:layout_constraintTop_toBottomOf="@+id/labelTeorAlc"
+            android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/labelVolume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
-            android:text="Volume: "
+            android:text="@string/volume"
             android:textColor="@color/cinzaText"
             app:layout_constraintStart_toStartOf="@+id/guideline15"
-            app:layout_constraintTop_toBottomOf="@+id/labelOrigem" />
+            app:layout_constraintTop_toBottomOf="@+id/labelOrigem"
+            android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/labelDescricao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
-            android:text="Descrição:"
+            android:text="@string/descrição"
             android:textColor="@color/cinzaText"
             app:layout_constraintStart_toStartOf="@+id/guideline15"
-            app:layout_constraintTop_toBottomOf="@+id/labelVolume" />
+            app:layout_constraintTop_toBottomOf="@+id/labelVolume"
+            android:layout_marginLeft="16dp" />
 
         <TextView
             android:id="@+id/txtPreco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
             android:layout_marginTop="16dp"
-            android:text="100.00"
+            android:text="@string/preço"
             android:textColor="@color/cinzaText"
             app:layout_constraintStart_toEndOf="@+id/labelPreco"
-            app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+            android:layout_marginLeft="4dp" />
 
         <TextView
             android:id="@+id/txtTeorAlc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
             android:layout_marginTop="8dp"
-            android:text="8%"
+            android:text="@string/porcentagem"
             android:textColor="@color/cinzaText"
             app:layout_constraintStart_toEndOf="@+id/labelTeorAlc"
-            app:layout_constraintTop_toBottomOf="@+id/txtPreco" />
+            app:layout_constraintTop_toBottomOf="@+id/txtPreco"
+            android:layout_marginLeft="4dp" />
 
         <TextView
             android:id="@+id/txtOrigem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
             android:layout_marginTop="8dp"
-            android:text="Suécia"
+            android:text="@string/suecia"
             android:textColor="@color/cinzaText"
             app:layout_constraintStart_toEndOf="@+id/labelOrigem"
-            app:layout_constraintTop_toBottomOf="@+id/txtTeorAlc" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTeorAlc"
+            android:layout_marginLeft="4dp" />
 
         <TextView
             android:id="@+id/txtVolume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
             android:layout_marginTop="8dp"
-            android:text="5x350 ml"
+            android:text="@string/_5x350_ml"
             android:textColor="@color/cinzaText"
             app:layout_constraintStart_toEndOf="@+id/labelVolume"
-            app:layout_constraintTop_toBottomOf="@+id/txtOrigem" />
+            app:layout_constraintTop_toBottomOf="@+id/txtOrigem"
+            android:layout_marginLeft="4dp" />
 
         <TextView
             android:id="@+id/txtDescricao"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
             android:justificationMode="inter_word"
-            android:text="Esse kit é uma ótima opção para quem quer gastar pouco e encantar muito! Nele vem 5 garrafas de 350ml da cerveja exclusiva Garrafinhas Fofinhas, com os sabores framboesa, maracujá, pomelo, morango e uva. "
+            android:text="@string/descricao_produto"
             android:textColor="@color/cinzaText"
             app:layout_constraintEnd_toStartOf="@+id/guideline16"
             app:layout_constraintStart_toEndOf="@+id/labelDescricao"
-            app:layout_constraintTop_toBottomOf="@+id/txtVolume" />
+            app:layout_constraintTop_toBottomOf="@+id/txtVolume"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="8dp" />
 
         <ImageButton
             android:id="@+id/imageButton"
@@ -237,7 +242,8 @@
             app:layout_constraintStart_toStartOf="@+id/guideline15"
             app:layout_constraintTop_toBottomOf="@+id/txtDescricao"
             app:layout_constraintVertical_bias="0.64"
-            app:srcCompat="@drawable/carrinho" />
+            app:srcCompat="@drawable/carrinho"
+            android:contentDescription="@string/colocar_o_item_no_carrinho" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
