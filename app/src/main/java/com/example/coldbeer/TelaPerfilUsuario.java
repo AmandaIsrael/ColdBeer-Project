@@ -16,6 +16,7 @@ public class TelaPerfilUsuario extends AppCompatActivity {
 
     private TelasMenu Actual;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,8 @@ public class TelaPerfilUsuario extends AppCompatActivity {
 
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
+
+        Actual = new TelasMenu();
     }
 
 

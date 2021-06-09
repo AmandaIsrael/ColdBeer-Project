@@ -22,6 +22,8 @@ public class TelaInicio extends AppCompatActivity {
 
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
+
+        Actual = new TelasMenu();
     }
 
     @Override

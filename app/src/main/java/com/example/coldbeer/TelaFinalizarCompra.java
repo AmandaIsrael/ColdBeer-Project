@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -29,6 +28,8 @@ public class TelaFinalizarCompra extends AppCompatActivity {
 
         TextView txtTotal = findViewById(R.id.txtTotal);
         txtTotal.setPaintFlags(txtTotal.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+        Actual = new TelasMenu();
     }
 
     public void telaAlterarEndereco(View view){

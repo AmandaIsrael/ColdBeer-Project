@@ -20,8 +20,11 @@ public class TelaListaProdutos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_lista_produtos);
+
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
+
+        Actual = new TelasMenu();
     }
 
     public void item(View view){

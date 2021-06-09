@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,8 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class TelaItem extends AppCompatActivity {
+
     private TelasMenu Actual;
     private Intent telaCarrinho;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,8 @@ public class TelaItem extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         telaCarrinho = new Intent(this, TelaCarrinho.class);
+
+        Actual = new TelasMenu();
     }
 
     public void telaCarrinho(View view){

@@ -22,13 +22,14 @@ public class TelaCarrinho extends AppCompatActivity {
     private TextView subtotal;
     private TextView valorUnit;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_carrinho);
+
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
+
         TextView txtValorTotal = findViewById(R.id.txtTotal);
         txtValorTotal.setPaintFlags(txtValorTotal.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
@@ -58,6 +59,8 @@ public class TelaCarrinho extends AppCompatActivity {
                 calcularSubtotal(valorAtual);
             }
         });
+
+        Actual = new TelasMenu();
     }
 
     private void calcularSubtotal(int quantidade){
