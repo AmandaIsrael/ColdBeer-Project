@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TelaListaProdutos"></activity>
+        <activity android:name=".TelaMeusPedidos"></activity>
+        <activity android:name=".TelaListaProdutos" />
         <activity android:name=".TelaItem" />
         <activity android:name=".TelaFinalizarCompra" />
         <activity android:name=".TelaCarrinho" />

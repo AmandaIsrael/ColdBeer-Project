@@ -99,5 +99,10 @@
     <string name="pesquisar_produtos_tela_produtos">Pesquisar Produtos</string>
     <string name="busca_tela_produtos">busca_tela_produtos</string>
 
+    <string name="labelData">Data</string>
+    <string name="txtData">01/07/2021</string>
+    <string name="labelHorarioEntrega">Horário de entrega:</string>
+    <string name="txtHorario">20:30</string>
+    <string name="btnRecebido">Recebido</string>
 
 </resources>
