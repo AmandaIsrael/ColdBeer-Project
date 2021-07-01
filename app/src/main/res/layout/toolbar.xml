@@ -16,11 +16,12 @@
         android:id="@+id/logo"
         android:layout_width="70dp"
         android:layout_height="50dp"
+        android:contentDescription="@string/logo_da_cervejaria_cold_bear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cold_bear_logo"
-        android:contentDescription="@string/logo_da_cervejaria_cold_bear" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/cold_bear_logo" />
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.appcompat.widget.Toolbar>

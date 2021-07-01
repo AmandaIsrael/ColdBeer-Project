@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
     android:background="@color/fundoLogin">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,21 +26,21 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="70dp"
             android:layout_marginRight="70dp"
+            android:autofillHints="@string/busca_inicio"
             android:background="@drawable/caixa_texto"
             android:ems="10"
             android:hint="@string/vazia"
             android:inputType="textPersonName"
+            android:paddingStart="10dp"
             android:paddingLeft="10dp"
+            android:paddingEnd="35dp"
             android:paddingRight="35dp"
             android:paddingBottom="4dp"
             android:textColor="@color/design_default_color_on_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            android:paddingEnd="35dp"
-            android:paddingStart="10dp"
-            android:autofillHints="@string/busca_inicio" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
         <ImageView
             android:id="@+id/imgKits"
@@ -50,13 +51,13 @@
             android:layout_marginTop="60dp"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
+            android:contentDescription="@string/imagem_kits_inicio"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtBusca"
-            app:srcCompat="@drawable/kit_c_tacas"
-            android:contentDescription="@string/imagem_kits_inicio" />
+            app:srcCompat="@drawable/kit_c_tacas" />
 
         <ImageView
             android:id="@+id/imgCervejas"
@@ -67,15 +68,13 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginBottom="132dp"
+            android:contentDescription="@string/imagem_de_cervejas_inicio"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="@+id/footer"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imgKits"
-            app:srcCompat="@drawable/cervejas4"
-            android:contentDescription="@string/imagem_de_cervejas_inicio" />
+            app:srcCompat="@drawable/cervejas4" />
 
         <Button
             android:id="@+id/btnKits"
@@ -106,42 +105,45 @@
             android:id="@+id/footer"
             android:layout_width="0dp"
             android:layout_height="60dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgCervejas"
+            app:layout_constraintVertical_bias="1.0">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/imgInsta"
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
+                    android:contentDescription="@string/compartilhe_no_instagram"
                     app:layout_constraintStart_toStartOf="@+id/guideline13"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/instagram"
-                    android:contentDescription="@string/compartilhe_no_instagram" />
+                    app:srcCompat="@drawable/instagram" />
 
                 <ImageView
                     android:id="@+id/imgTwitter"
                     android:layout_width="30dp"
                     android:layout_height="match_parent"
+                    android:contentDescription="@string/compartilhe_no_twitter"
                     app:layout_constraintStart_toStartOf="@+id/guideline12"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/twitter"
-                    android:contentDescription="@string/compartilhe_no_twitter" />
+                    app:srcCompat="@drawable/twitter" />
 
                 <ImageView
                     android:id="@+id/imgWhats"
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/compartilhe_no_whatsapp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline14"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/whatsapp"
-                    android:contentDescription="@string/compartilhe_no_whatsapp" />
+                    app:srcCompat="@drawable/whatsapp" />
 
                 <androidx.constraintlayout.widget.Guideline
                     android:id="@+id/guideline12"
@@ -174,11 +176,11 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="6dp"
+            android:contentDescription="@string/busca_inicio"
             app:layout_constraintBottom_toBottomOf="@+id/txtBusca"
             app:layout_constraintEnd_toEndOf="@+id/txtBusca"
             app:layout_constraintTop_toTopOf="@+id/txtBusca"
-            app:srcCompat="@drawable/ic_baseline_search_24"
-            android:contentDescription="@string/busca_inicio" />
+            app:srcCompat="@drawable/ic_baseline_search_24" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
