@@ -17,7 +17,6 @@ import android.widget.TextView;
 public class TelaCarrinho extends AppCompatActivity {
 
     private TelasMenu Actual;
-
     private TextView item1;
     private TextView subtotal;
     private TextView valorUnit;

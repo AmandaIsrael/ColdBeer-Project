@@ -135,50 +135,33 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
 
-    <EditText
-        android:id="@+id/txtQuantidade"
-        android:layout_width="42dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:gravity="center_horizontal"
-        android:inputType="number"
-        android:text="@string/preço_default02_carrinho"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/btnDiminuir"
-        app:layout_constraintTop_toBottomOf="@+id/labelValor"
-        android:autofillHints="@string/quantidade1"
-        tools:ignore="LabelFor" />
-
     <ImageView
         android:id="@+id/btnAumentar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
+        android:layout_width="33dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="15dp"
+        android:contentDescription="@string/aumentar_quantidade"
         app:layout_constraintStart_toEndOf="@+id/txtQuantidade"
         app:layout_constraintTop_toBottomOf="@+id/labelValor"
-        app:srcCompat="@drawable/ic_baseline_add_circle_24"
-        android:contentDescription="@string/aumentar_quantidade" />
+        app:srcCompat="@drawable/ic_baseline_add_circle_24" />
 
     <ImageView
         android:id="@+id/btnDiminuir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="33dp"
+        android:layout_height="31dp"
         android:layout_marginTop="15dp"
+        android:contentDescription="@string/diminuir_quantidade"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toBottomOf="@+id/labelValor"
-        app:srcCompat="@drawable/ic_baseline_remove_circle_24"
-        android:contentDescription="@string/diminuir_quantidade" />
+        app:srcCompat="@drawable/ic_baseline_remove_circle_24" />
 
     <TextView
         android:id="@+id/labelSubtotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="22dp"
         android:text="@string/subtotal_01_carrinho"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
@@ -375,7 +358,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="22dp"
         android:hint="@string/preço01_carrinho"
         android:inputType="number"
         android:text="@string/preço01_carrinho"
@@ -383,6 +366,18 @@
         app:layout_constraintStart_toEndOf="@+id/labelSubtotal"
         app:layout_constraintTop_toBottomOf="@+id/txtQuantidade"
         tools:ignore="TextViewEdits" />
+
+    <TextView
+        android:id="@+id/txtQuantidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:text="1"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/btnDiminuir"
+        app:layout_constraintTop_toBottomOf="@+id/labelValor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
