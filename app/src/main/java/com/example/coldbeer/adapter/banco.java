@@ -15,9 +15,9 @@ public class banco extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DbHelper db = new DbHelper(this);
-        escreve = db.getWritableDatabase();
-        le = db.getReadableDatabase();
+        //DbHelper db = new DbHelper(this);
+        //escreve = db.getWritableDatabase();
+        //le = db.getReadableDatabase();
 
         try{
             String consulta = "SELECT * FROM pessoa;";
