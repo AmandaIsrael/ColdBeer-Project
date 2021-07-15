@@ -101,16 +101,26 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        String sql = "DROP TABLE IF EXISTS " + TABELA_CLIENTE + " ;" ;
+        String dropCliente = "DROP TABLE IF EXISTS " + TABELA_CLIENTE + " ;" ;
+        String dropEndereco = "DROP TABLE IF EXISTS " + TABELA_ENDERECO + " ;" ;
+        String dropProduto = "DROP TABLE IF EXISTS " + TABELA_PRODUTO + " ;" ;
+        String dropItem = "DROP TABLE IF EXISTS " + TABELA_ITEM + " ;" ;
+        String dropCarrinho = "DROP TABLE IF EXISTS " + TABELA_CARRINHO + " ;" ;
+        String dropInfoPedido = "DROP TABLE IF EXISTS " + TABELA_INFO_PEDIDO + " ;" ;
+        String dropPedido = "DROP TABLE IF EXISTS " + TABELA_PEDIDO + " ;" ;
 
         try {
-            db.execSQL( sql );
+            db.execSQL( dropCliente );
+            db.execSQL( dropEndereco );
+            db.execSQL( dropProduto );
+            db.execSQL( dropItem );
+            db.execSQL( dropCarrinho );
+            db.execSQL( dropInfoPedido );
+            db.execSQL( dropPedido );
             onCreate(db);
             Log.i("INFO DB", "Sucesso ao atualizar App" );
         }catch (Exception e){
             Log.i("INFO DB", "Erro ao atualizar App" + e.getMessage() );
         }
     }
-
-
 }
