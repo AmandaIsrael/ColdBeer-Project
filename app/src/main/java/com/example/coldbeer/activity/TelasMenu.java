@@ -1,4 +1,4 @@
-package com.example.coldbeer;
+package com.example.coldbeer.activity;
 
 import android.content.Context;
 import android.content.Intent;

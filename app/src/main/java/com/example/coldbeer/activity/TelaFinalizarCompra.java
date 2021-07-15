@@ -1,38 +1,42 @@
-package com.example.coldbeer;
+package com.example.coldbeer.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
-public class TelaItem extends AppCompatActivity {
+import com.example.coldbeer.R;
+
+public class TelaFinalizarCompra extends AppCompatActivity {
 
     private TelasMenu Actual;
-    private Intent telaCarrinho;
-
+    private Intent perfilUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_item);
+        setContentView(R.layout.activity_tela_finalizar_compra);
 
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
 
-        telaCarrinho = new Intent(this, TelaCarrinho.class);
+        TextView txtTotal = findViewById(R.id.txtTotal);
+        txtTotal.setPaintFlags(txtTotal.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         Actual = new TelasMenu();
     }
 
-    public void telaCarrinho(View view){
-        telaCarrinho = new Intent(this, TelaCarrinho.class);
-        startActivity(telaCarrinho);
+    public void telaAlterarEndereco(View view){
+        perfilUser = new Intent(this, TelaPerfilUsuario.class);
+        startActivity(perfilUser);
     }
 
     @Override

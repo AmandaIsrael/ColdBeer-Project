@@ -1,8 +1,10 @@
-package com.example.coldbeer;
+package com.example.coldbeer.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.coldbeer.R;
 
 public class TelaMeusPedidos extends AppCompatActivity {
 

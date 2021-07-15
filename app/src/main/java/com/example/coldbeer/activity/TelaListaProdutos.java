@@ -1,4 +1,4 @@
-package com.example.coldbeer;
+package com.example.coldbeer.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.example.coldbeer.R;
 
 public class TelaListaProdutos extends AppCompatActivity {
 

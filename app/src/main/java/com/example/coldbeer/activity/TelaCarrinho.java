@@ -1,4 +1,4 @@
-package com.example.coldbeer;
+package com.example.coldbeer.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.coldbeer.R;
 
 public class TelaCarrinho extends AppCompatActivity {
 

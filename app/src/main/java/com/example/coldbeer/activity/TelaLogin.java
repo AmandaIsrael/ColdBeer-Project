@@ -1,10 +1,12 @@
-package com.example.coldbeer;
+package com.example.coldbeer.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.coldbeer.R;
 
 public class TelaLogin extends AppCompatActivity {
 

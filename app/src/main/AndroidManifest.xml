@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TelaMeusPedidos"></activity>
-        <activity android:name=".TelaListaProdutos" />
-        <activity android:name=".TelaItem" />
-        <activity android:name=".TelaFinalizarCompra" />
-        <activity android:name=".TelaCarrinho" />
-        <activity android:name=".TelaInicio" />
-        <activity android:name=".TelaPerfilUsuario" />
-        <activity android:name=".TelaCadastro" />
-        <activity android:name=".TelaLogin">
+        <activity android:name=".activity.TelaMeusPedidos"></activity>
+        <activity android:name=".activity.TelaListaProdutos" />
+        <activity android:name=".activity.TelaItem" />
+        <activity android:name=".activity.TelaFinalizarCompra" />
+        <activity android:name=".activity.TelaCarrinho" />
+        <activity android:name=".activity.TelaInicio" />
+        <activity android:name=".activity.TelaPerfilUsuario" />
+        <activity android:name=".activity.TelaCadastro" />
+        <activity android:name=".activity.TelaLogin">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
