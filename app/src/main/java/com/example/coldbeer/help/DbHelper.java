@@ -92,7 +92,7 @@ public class DbHelper extends SQLiteOpenHelper {
             db.execSQL( criarCarrinho );
             db.execSQL( criarInfoPedido );
             db.execSQL( criarPedido );
-            Log.i("INFO DB", "Sucesso ao criar a tabela" );
+            Log.i("INFO DB", "Sucesso ao criar a tabela");
         }catch (Exception e){
             Log.i("INFO DB", "Erro ao criar a tabela" + e.getMessage() );
         }
