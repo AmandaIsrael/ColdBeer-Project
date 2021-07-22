@@ -1,78 +1,50 @@
 package com.example.coldbeer.dao;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import com.example.coldbeer.help.DbGateway;
-import com.example.coldbeer.help.DbHelper;
-import com.example.coldbeer.model.Cliente;
 
-public class ClienteDao {
-    private SQLiteDatabase escreve;
-    private SQLiteDatabase le;
-    private DbHelper db;
-    private DbGateway gatewayDb;
+public class ClienteDao extends SQLiteOpenHelper {
+    private static final String TABELA_ENDERECO = "endereco";
+    public static int VERSAO = 1;
+    public static String DATABASE = "coldbeer";
+    public static String TABELA = "cliente";
 
-    public ClienteDao(Context context){
-        gatewayDb = DbGateway.getInstance(context);
-        escreve = gatewayDb.getDatabase(true);
-        le = gatewayDb.getDatabase(false);
+    public ClienteDao(Context context) {
+        super(context, DATABASE, null, VERSAO);
     }
 
-    public String inserirCliente(Cliente cliente){
-        ContentValues valores;
-        long resultado;
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        String criarCliente = "CREATE TABLE IF NOT EXISTS " + TABELA
+                + " (cod_cliente INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                " email TEXT NOT NULL, " +
+                " senha TEXT NOT NULL, " +
+                " nome TEXT NOT NULL, " +
+                " telefone TEXT NOT NULL, " +
+                " idade INT(3)," +
+                " cod_endereco INTEGER NOT NULL, "+
+                " FOREIGN KEY (cod_endereco) REFERENCES "+TABELA_ENDERECO+"(cod_endereco));";
 
-        valores = new ContentValues();
-        valores.put("nome", cliente.getNome());
-        valores.put("email", cliente.getEmail());
-        valores.put("senha", cliente.getSenha());
-        valores.put("telefone", cliente.getTelefone());
-        valores.put("idade", cliente.getIdade());
-
-        resultado = escreve.insert(db.TABELA_CLIENTE, null, valores);
-        db.close();
-
-        if(resultado == -1){
-            return ("Erro ao inserir na tabela cliente!");
-        }else{
-            return ("Registro inserido com sucesso!");
+        try {
+            db.execSQL(criarCliente);
+            Log.i("INFO DB", "Sucesso ao criar a tabela cliente");
+        }catch (Exception e){
+            Log.i("INFO DB", "Erro ao criar a tabela cliente" + e.getMessage() );
         }
     }
 
-    public void listarClientes(){
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        String dropCliente = "DROP TABLE IF EXISTS " + TABELA + " ;" ;
+
         try {
-            String consulta = "SELECT * FROM cliente";
-            Cursor cursor = le.rawQuery(consulta, null);
-
-            int indiceCodigo = cursor.getColumnIndex("cod_cliente");
-            int indiceEmail = cursor.getColumnIndex("email");
-            int indiceSenha = cursor.getColumnIndex("senha");
-            int indiceNome = cursor.getColumnIndex("nome");
-            int indiceTelefone = cursor.getColumnIndex("telefone");
-            int indiceIdade = cursor.getColumnIndex("idade");
-            int indiceCodEndereco = cursor.getColumnIndex("cod_endereco");
-
-            cursor.moveToFirst();
-
-            while (cursor != null) {
-                int codigo = cursor.getInt(indiceCodigo);
-                String email = cursor.getString(indiceEmail);
-                String senha = cursor.getString(indiceSenha);
-                String nome = cursor.getString(indiceNome);
-                String telefone = cursor.getString(indiceTelefone);
-                int idade = cursor.getInt(indiceIdade);
-                int cod_endereco = cursor.getInt(indiceCodEndereco);
-
-                Log.i("id: ", codigo + " email: " + email + " senha: " + senha + " nome: " + nome +
-                        " telefone: " + telefone + " idade: " + idade + " cod_endereco: " + cod_endereco);
-                cursor.moveToNext();
-            }
+            db.execSQL( dropCliente );
+            onCreate(db);
+            Log.i("INFO DB", "Sucesso ao atualizar App - tabela cliente" );
         }catch (Exception e){
-            Log.i("info", "erro");
-            e.printStackTrace();
+            Log.i("INFO DB", "Erro ao atualizar App - tabela cliente" + e.getMessage() );
         }
     }
 }
