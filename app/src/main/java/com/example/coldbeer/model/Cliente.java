@@ -3,13 +3,14 @@ package com.example.coldbeer.model;
 public class Cliente {
 
     int codCliente, idade;
-    String email, nome, telefone;
+    String email, nome, telefone, senha;
 
-    public Cliente(int idade, String email, String nome, String telefone) {
+    public Cliente(int idade, String email, String nome, String telefone, String senha) {
         this.idade = idade;
         this.email = email;
         this.nome = nome;
         this.telefone = telefone;
+        this.senha = senha;
     }
 
     public int getCodCliente() {
@@ -46,5 +47,13 @@ public class Cliente {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
