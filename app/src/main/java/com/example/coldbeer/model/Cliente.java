@@ -2,15 +2,28 @@ package com.example.coldbeer.model;
 
 public class Cliente {
 
-    int codCliente, idade;
+    int codCliente, idade, cod_endereco;
     String email, nome, telefone, senha;
 
-    public Cliente(int idade, String email, String nome, String telefone, String senha) {
+    public Cliente(int idade, String email, String nome, String telefone, String senha, int cod_endereco) {
         this.idade = idade;
         this.email = email;
         this.nome = nome;
         this.telefone = telefone;
         this.senha = senha;
+        this.cod_endereco = cod_endereco;
+    }
+
+    public void setCodCliente(int codCliente) {
+        this.codCliente = codCliente;
+    }
+
+    public int getCod_endereco() {
+        return cod_endereco;
+    }
+
+    public void setCod_endereco(int cod_endereco) {
+        this.cod_endereco = cod_endereco;
     }
 
     public int getCodCliente() {

@@ -5,7 +5,8 @@ public class Endereco {
     int codEndereco, numero;
     double frete;
 
-    public Endereco(String rua, String bairro, String complemento, int numero, double frete) {
+    public Endereco(int codEndereco, String rua, String bairro, String complemento, int numero, double frete) {
+        this.codEndereco = codEndereco;
         this.rua = rua;
         this.bairro = bairro;
         this.complemento = complemento;

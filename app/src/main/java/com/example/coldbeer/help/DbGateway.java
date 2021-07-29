@@ -8,7 +8,6 @@ public class DbGateway {
     private SQLiteDatabase le;
     private SQLiteDatabase escreve;
 
-
     private DbGateway(Context ctx){
         DbHelper helper = new DbHelper(ctx);
         escreve = helper.getWritableDatabase();

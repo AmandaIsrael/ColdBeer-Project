@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-
 import com.example.coldbeer.help.DbGateway;
 import com.example.coldbeer.help.DbHelper;
 import com.example.coldbeer.model.Cliente;
@@ -54,7 +53,7 @@ public class ClienteDao {
             int indiceNome = cursor.getColumnIndex("nome");
             int indiceTelefone = cursor.getColumnIndex("telefone");
             int indiceIdade = cursor.getColumnIndex("idade");
-           // int indiceCodEndereco = cursor.getColumnIndex("cod_endereco");
+            int indiceCodEndereco = cursor.getColumnIndex("cod_endereco");
 
             cursor.moveToFirst();
 
@@ -65,10 +64,10 @@ public class ClienteDao {
                 String nome = cursor.getString(indiceNome);
                 String telefone = cursor.getString(indiceTelefone);
                 int idade = cursor.getInt(indiceIdade);
-               // int cod_endereco = cursor.getInt(indiceCodEndereco);
+                int cod_endereco = cursor.getInt(indiceCodEndereco);
 
                 Log.i("id: ", codigo + " email: " + email + " senha: " + senha + " nome: " + nome +
-                        " telefone: " + telefone + " idade: " + idade);
+                        " telefone: " + telefone + " idade: " + idade + " cod_endereco: "+ cod_endereco);
                 cursor.moveToNext();
             }
         }catch (Exception e){
