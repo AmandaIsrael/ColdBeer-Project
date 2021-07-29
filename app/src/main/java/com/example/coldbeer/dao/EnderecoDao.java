@@ -5,9 +5,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+
 import com.example.coldbeer.help.DbGateway;
 import com.example.coldbeer.help.DbHelper;
 import com.example.coldbeer.model.Endereco;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EnderecoDao {
     private SQLiteDatabase escreve;
@@ -21,9 +25,9 @@ public class EnderecoDao {
         le = gatewayDb.getDatabase(false);
     }
 
-    public String inserirEndereco(Endereco endereco) {
+    public int inserirEndereco(Endereco endereco) {
         ContentValues valores;
-        long resultado;
+        int codigo;
 
         valores = new ContentValues();
         valores.put("rua", endereco.getRua());
@@ -32,17 +36,15 @@ public class EnderecoDao {
         valores.put("complemento", endereco.getComplemento());
         valores.put("frete", endereco.getFrete());
 
-        resultado = escreve.insert(db.TABELA_ENDERECO, null, valores);
-        //db.close();
+        escreve.insert(db.TABELA_ENDERECO, null, valores);
+        codigo = buscarCodEndereco(endereco);
 
-        if (resultado == -1) {
-            return ("Erro ao inserir na tabela endereço!");
-        } else {
-            return ("Registro inserido com sucesso na tabela endereço!");
-        }
+        return codigo;
     }
 
-    public void listarEnderecos() {
+    public List<Endereco> listarEnderecos() {
+        List<Endereco> listaEndereco = new ArrayList<>();
+        Endereco endereco;
         try {
             String consulta = "SELECT * FROM endereco";
             Cursor cursor = le.rawQuery(consulta, null);
@@ -64,6 +66,16 @@ public class EnderecoDao {
                 String complemento = cursor.getString(indiceComplemento);
                 double frete = cursor.getDouble(indiceFrete);
 
+                endereco = new Endereco();
+                endereco.setCodEndereco(codigo);
+                endereco.setRua(rua);
+                endereco.setBairro(bairro);
+                endereco.setNumero(numero);
+                endereco.setComplemento(complemento);
+                endereco.setFrete(frete);
+
+                listaEndereco.add(endereco);
+
                 Log.i("id: ", codigo + " rua: " + rua + " bairro: " + bairro + " numero: " + numero +
                         " complemento: " + complemento + " frete: " + frete);
                 cursor.moveToNext();
@@ -72,6 +84,27 @@ public class EnderecoDao {
             Log.i("info", "erro");
             e.printStackTrace();
         }
+        return listaEndereco;
+    }
+
+    public int buscarCodEndereco(Endereco endereco) {
+        int codigo = 0;
+        try {
+            String consulta = "SELECT * FROM endereco WHERE rua = '" + endereco.getRua()+
+                    "' AND bairro = '" + endereco.getBairro()+
+                    "' AND numero = " + endereco.getNumero()+
+                    " AND frete = " + endereco.getFrete() +";";
+            Cursor cursor = le.rawQuery(consulta, null);
+
+            int indiceCodigo = cursor.getColumnIndex("cod_endereco");
+
+            cursor.moveToFirst();
+            codigo = cursor.getInt(indiceCodigo);
+        } catch (Exception e) {
+            Log.i("info", "erro");
+            e.printStackTrace();
+        }
+        return codigo;
     }
 
     public Endereco buscarEndereco(int cod_endereco) {
