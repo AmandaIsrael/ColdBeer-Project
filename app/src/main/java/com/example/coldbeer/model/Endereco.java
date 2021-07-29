@@ -5,13 +5,18 @@ public class Endereco {
     int codEndereco, numero;
     double frete;
 
-    public Endereco(int codEndereco, String rua, String bairro, String complemento, int numero, double frete) {
-        this.codEndereco = codEndereco;
+    public Endereco(String rua, String bairro, String complemento, int numero, double frete) {
         this.rua = rua;
         this.bairro = bairro;
         this.complemento = complemento;
         this.numero = numero;
         this.frete = frete;
+    }
+
+    public Endereco(){}
+
+    public void setCodEndereco(int codEndereco) {
+        this.codEndereco = codEndereco;
     }
 
     public String getRua() {

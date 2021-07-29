@@ -86,13 +86,22 @@ public class EnderecoDao {
             int indiceComplemento = cursor.getColumnIndex("complemento");
             int indiceFrete = cursor.getColumnIndex("frete");
 
+            cursor.moveToFirst();
+
             String rua = cursor.getString(indiceRua);
             String bairro = cursor.getString(indiceBairro);
             int numero = cursor.getInt(indiceNumero);
             String complemento = cursor.getString(indiceComplemento);
             double frete = cursor.getDouble(indiceFrete);
 
-            endereco = new Endereco(cod_endereco, rua, bairro, complemento, numero, frete);
+            endereco = new Endereco();
+
+            endereco.setCodEndereco(cod_endereco);
+            endereco.setRua(rua);
+            endereco.setBairro(bairro);
+            endereco.setNumero(numero);
+            endereco.setComplemento(complemento);
+            endereco.setFrete(frete);
 
             Log.i("id: ", cod_endereco + " rua: " + rua + " bairro: " + bairro + " numero: " + numero +
                     " complemento: " + complemento + " frete: " + frete);
@@ -101,5 +110,34 @@ public class EnderecoDao {
             e.printStackTrace();
         }
         return endereco;
+    }
+
+    public void atualizarEndereco(Endereco endereco) {
+        try {
+            ContentValues valores = new ContentValues();
+            valores.put("rua", endereco.getRua());
+            valores.put("bairro", endereco.getBairro());
+            valores.put("numero", endereco.getNumero());
+            valores.put("complemento", endereco.getComplemento());
+            valores.put("frete", endereco.getFrete());
+
+            String[] codigo = {String.valueOf(endereco.getCodEndereco())};
+            escreve.update("endereco", valores, "cod_endereco = ?", codigo);
+
+        } catch (Exception e) {
+            Log.i("info", "erro");
+            e.printStackTrace();
+        }
+    }
+
+    public void deletarEndereco(int cod_endereco) {
+        Endereco endereco;
+        try {
+            String[] codigo = {String.valueOf(cod_endereco)};
+            escreve.delete("endereco", "cod_endereco = ?", codigo);
+        } catch (Exception e) {
+            Log.i("info", "erro");
+            e.printStackTrace();
+        }
     }
 }
