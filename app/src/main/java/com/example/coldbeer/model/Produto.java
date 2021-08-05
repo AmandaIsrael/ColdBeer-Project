@@ -15,6 +15,12 @@ public class Produto {
         this.categoria = categoria;
     }
 
+    public Produto(){}
+
+    public void setCodProduto(int codProduto) {
+        this.codProduto = codProduto;
+    }
+
     public int getCodProduto() {
         return codProduto;
     }
