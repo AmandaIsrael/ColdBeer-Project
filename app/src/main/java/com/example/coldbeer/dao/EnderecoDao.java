@@ -1,11 +1,13 @@
 package com.example.coldbeer.dao;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.example.coldbeer.controller.TelaCadastroController;
 import com.example.coldbeer.help.DbGateway;
 import com.example.coldbeer.help.DbHelper;
 import com.example.coldbeer.model.Endereco;
