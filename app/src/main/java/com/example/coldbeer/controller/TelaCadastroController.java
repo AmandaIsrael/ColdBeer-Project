@@ -1,5 +1,7 @@
 package com.example.coldbeer.controller;
 
+import android.content.Context;
+
 import com.example.coldbeer.dao.ClienteDao;
 import com.example.coldbeer.dao.EnderecoDao;
 import com.example.coldbeer.model.Cliente;
@@ -12,11 +14,12 @@ public class TelaCadastroController {
     Endereco endereco;
     ClienteDao clienteDao = null;
     EnderecoDao enderecoDao = null;
+    int codEndereco;
 
     public void TelaCadastroController() {
     }
 
-    public void cadastrar(List<String> dadosPessoaisCliente, List<String> enderecoCliente){
+    public void cadastrar(List<String> dadosPessoaisCliente, List<String> enderecoCliente, Context telaCadastro){
         cliente = new Cliente();
         endereco = new Endereco();
         cliente.setEmail(dadosPessoaisCliente.get(0));
@@ -30,11 +33,12 @@ public class TelaCadastroController {
         endereco.setComplemento(enderecoCliente.get(3));
         endereco.setFrete(random());
 
-        enderecoDao = new EnderecoDao(this);
+        enderecoDao = new EnderecoDao(telaCadastro);
         enderecoDao.inserirEndereco(endereco);
-        cliente.setCodEndereco(enderecoDao.buscarCodEndereco(endereco));
+        codEndereco = enderecoDao.buscarCodEndereco(endereco);
+        cliente.setCodEndereco(codEndereco);
 
-        clienteDao = new ClienteDao(this);
+        clienteDao = new ClienteDao(telaCadastro);
         clienteDao.inserirCliente(cliente);
 
         clienteDao.listarClientes();

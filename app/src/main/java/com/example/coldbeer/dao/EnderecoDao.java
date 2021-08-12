@@ -92,7 +92,7 @@ public class EnderecoDao {
     public int buscarCodEndereco(Endereco endereco) {
         int codigo = 0;
         try {
-            String consulta = "SELECT * FROM endereco WHERE rua = '" + endereco.getRua()+
+            String consulta = "SELECT cod_endereco FROM endereco WHERE rua = '" + endereco.getRua()+
                     "' AND bairro = '" + endereco.getBairro()+
                     "' AND numero = " + endereco.getNumero()+
                     " AND frete = " + endereco.getFrete() +";";

@@ -39,8 +39,8 @@ public class DbHelper extends SQLiteOpenHelper {
                 " senha TEXT NOT NULL, " +
                 " nome TEXT NOT NULL, " +
                 " telefone TEXT NOT NULL, " +
-                " idade INT(3), " +
-                " cod_endereco INTEGER, "+
+                " idade INT(3) NOT NULL, " +
+                " cod_endereco INTEGER NOT NULL, "+
                 " FOREIGN KEY (cod_endereco) REFERENCES "+TABELA_ENDERECO+"(cod_endereco));";
 
         String criarProduto = "CREATE TABLE IF NOT EXISTS " + TABELA_PRODUTO

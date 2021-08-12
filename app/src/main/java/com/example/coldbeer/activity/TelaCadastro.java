@@ -69,7 +69,7 @@ public class TelaCadastro extends AppCompatActivity {
                 endereco.add(complemento.getText().toString());
 
                 controllerCadastro = new TelaCadastroController();
-                controllerCadastro.cadastrar(dadosCliente, endereco);
+                controllerCadastro.cadastrar(dadosCliente, endereco, getApplicationContext());
             }
         });
     }

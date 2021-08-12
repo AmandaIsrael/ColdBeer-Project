@@ -35,6 +35,7 @@ public class ClienteDao {
         valores.put("senha", cliente.getSenha());
         valores.put("telefone", cliente.getTelefone());
         valores.put("idade", cliente.getIdade());
+        valores.put("cod_endereco", cliente.getCodEndereco());
 
         resultado = escreve.insert(db.TABELA_CLIENTE, null, valores);
         //db.close();
