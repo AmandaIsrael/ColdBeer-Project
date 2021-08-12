@@ -2,25 +2,19 @@ package com.example.coldbeer.activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 import com.example.coldbeer.R;
-import com.example.coldbeer.controller.TelaCadastroController;
+import com.example.coldbeer.controller.ClienteController;
 import com.example.coldbeer.dao.ClienteDao;
 import com.example.coldbeer.dao.EnderecoDao;
 import com.example.coldbeer.model.Cliente;
 import com.example.coldbeer.model.Endereco;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class TelaCadastro extends AppCompatActivity {
     EditText email;
@@ -33,7 +27,7 @@ public class TelaCadastro extends AppCompatActivity {
     EditText bairro;
     EditText complemento;
     Button cadastrar;
-    TelaCadastroController controllerCadastro;
+    ClienteController controllerCadastro;
     Cliente cliente;
     Endereco enderecoModel;
     EnderecoDao enderecoDao;
@@ -54,8 +48,7 @@ public class TelaCadastro extends AppCompatActivity {
         numero = (EditText)findViewById(R.id.txtNumero);
         bairro = (EditText)findViewById(R.id.txtBairro);
         complemento = (EditText)findViewById(R.id.txtComplemento);
-        cadastrar = (Button)findViewById(R.id.btnAtualizar);
-        //controllerCadastro = new TelaCadastroController();
+        cadastrar = (Button)findViewById(R.id.btnCadastrar);
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +65,7 @@ public class TelaCadastro extends AppCompatActivity {
                 endereco.add(numero.getText().toString());
                 endereco.add(complemento.getText().toString());
 
-                controllerCadastro = new TelaCadastroController();
+                controllerCadastro = new ClienteController();
                 retornoCadastro = controllerCadastro.cadastrar(dadosCliente, endereco, getApplicationContext());
 
                 if(retornoCadastro == 0){
@@ -96,10 +89,5 @@ public class TelaCadastro extends AppCompatActivity {
                 popupInserir.create().show();
             }
         });
-    }
-
-    public void telaLogin(View view){
-        Intent intent = new Intent(this, TelaLogin.class);
-        startActivity(intent);
     }
 }

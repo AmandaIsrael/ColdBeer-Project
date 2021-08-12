@@ -14,10 +14,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.coldbeer.R;
+import com.example.coldbeer.controller.TelasGateway;
 
 public class TelaFinalizarCompra extends AppCompatActivity {
 
-    private TelasMenu Actual;
+    private TelasGateway Actual;
     private Intent perfilUser;
 
     @Override
@@ -31,11 +32,11 @@ public class TelaFinalizarCompra extends AppCompatActivity {
         TextView txtTotal = findViewById(R.id.txtTotal);
         txtTotal.setPaintFlags(txtTotal.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
-        Actual = new TelasMenu();
+        Actual = TelasGateway.getTelas();
     }
 
     public void telaAlterarEndereco(View view){
-        perfilUser = new Intent(this, TelaPerfilUsuario.class);
+        perfilUser = Actual.PerfUser(this);
         startActivity(perfilUser);
     }
 
@@ -61,15 +62,19 @@ public class TelaFinalizarCompra extends AppCompatActivity {
                 startActivity(Products);
                 return true;
             case R.id.sair:
-                Intent Login = Actual.Out(this);
+                Intent Login = Actual.Sair(this);
                 startActivity(Login);
                 return true;
+            case R.id.meusPedidos:
+                Intent MeusPedidos = Actual.MeusPedidos(this);
+                startActivity(MeusPedidos);
+                return true;
             case R.id.carrinho:
-                Intent Cart = Actual.Cart(this);
+                Intent Cart = Actual.Carrinho(this);
                 startActivity(Cart);
                 return true;
             case R.id.perfilUsuario:
-                Intent perfUser = Actual.perfUser(this);
+                Intent perfUser = Actual.PerfUser(this);
                 startActivity(perfUser);
                 return true;
             default:

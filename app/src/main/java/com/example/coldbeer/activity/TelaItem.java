@@ -12,10 +12,11 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.coldbeer.R;
+import com.example.coldbeer.controller.TelasGateway;
 
 public class TelaItem extends AppCompatActivity {
 
-    private TelasMenu Actual;
+    private TelasGateway Actual;
     private Intent telaCarrinho;
 
 
@@ -29,11 +30,11 @@ public class TelaItem extends AppCompatActivity {
 
         telaCarrinho = new Intent(this, TelaCarrinho.class);
 
-        Actual = new TelasMenu();
+        Actual = TelasGateway.getTelas();
     }
 
     public void telaCarrinho(View view){
-        telaCarrinho = new Intent(this, TelaCarrinho.class);
+        telaCarrinho = Actual.Carrinho(this);
         startActivity(telaCarrinho);
     }
 
@@ -59,15 +60,19 @@ public class TelaItem extends AppCompatActivity {
                 startActivity(Products);
                 return true;
             case R.id.sair:
-                Intent Login = Actual.Out(this);
+                Intent Login = Actual.Sair(this);
                 startActivity(Login);
                 return true;
             case R.id.carrinho:
-                Intent Cart = Actual.Cart(this);
+                Intent Cart = Actual.Carrinho(this);
                 startActivity(Cart);
                 return true;
+            case R.id.meusPedidos:
+                Intent MeusPedidos = Actual.MeusPedidos(this);
+                startActivity(MeusPedidos);
+                return true;
             case R.id.perfilUsuario:
-                Intent perfUser = Actual.perfUser(this);
+                Intent perfUser = Actual.PerfUser(this);
                 startActivity(perfUser);
                 return true;
             default:

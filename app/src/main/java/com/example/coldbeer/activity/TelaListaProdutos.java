@@ -12,10 +12,11 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.coldbeer.R;
+import com.example.coldbeer.controller.TelasGateway;
 
 public class TelaListaProdutos extends AppCompatActivity {
 
-    private TelasMenu Actual;
+    private TelasGateway Actual;
     private Intent telaItem;
 
     @Override
@@ -26,11 +27,11 @@ public class TelaListaProdutos extends AppCompatActivity {
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
 
-        Actual = new TelasMenu();
+        Actual = TelasGateway.getTelas();
     }
 
     public void item(View view){
-        telaItem =  new Intent(this, TelaItem.class);
+        telaItem =  Actual.Item(this);
         startActivity(telaItem);
     }
 
@@ -51,15 +52,19 @@ public class TelaListaProdutos extends AppCompatActivity {
                 startActivity(Inicial);
                 return true;
             case R.id.sair:
-                Intent Login = Actual.Out(this);
+                Intent Login = Actual.Sair(this);
                 startActivity(Login);
                 return true;
             case R.id.carrinho:
-                Intent Cart = Actual.Cart(this);
+                Intent Cart = Actual.Carrinho(this);
                 startActivity(Cart);
                 return true;
+            case R.id.meusPedidos:
+                Intent MeusPedidos = Actual.MeusPedidos(this);
+                startActivity(MeusPedidos);
+                return true;
             case R.id.perfilUsuario:
-                Intent UserProfile = Actual.perfUser(this);
+                Intent UserProfile = Actual.PerfUser(this);
                 startActivity(UserProfile);
                 return true;
             default:

@@ -19,6 +19,9 @@
         android:id="@+id/cervejas"
         android:title="@string/cervejas" />
     <item
+        android:id="@+id/meusPedidos"
+        android:title="Meus pedidos" />
+    <item
         android:id="@+id/sair"
         android:title="@string/sair" />
 </menu>

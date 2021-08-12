@@ -38,10 +38,10 @@
             android:layout_width="0dp"
             android:layout_height="46dp"
             android:layout_marginTop="5dp"
+            android:autofillHints="@string/txtSenha"
             android:background="@drawable/caixa_texto"
             android:ems="10"
             android:hint="@string/txtSenha"
-            android:inputType="textPassword"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:singleLine="false"
@@ -49,8 +49,7 @@
             android:textColorHint="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/txtEmail"
-            android:autofillHints="@string/txtSenha" />
+            app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
         <EditText
             android:id="@+id/txtNome"

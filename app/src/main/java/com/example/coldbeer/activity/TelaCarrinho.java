@@ -11,14 +11,16 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ActionMenuView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.coldbeer.R;
+import com.example.coldbeer.controller.TelasGateway;
 
 public class TelaCarrinho extends AppCompatActivity {
 
-    private TelasMenu Actual;
+    private TelasGateway Actual;
     private TextView item1;
     private TextView subtotal;
     private TextView valorUnit;
@@ -61,7 +63,7 @@ public class TelaCarrinho extends AppCompatActivity {
             }
         });
 
-        Actual = new TelasMenu();
+        Actual = TelasGateway.getTelas();
     }
 
     private void calcularSubtotal(int quantidade){
@@ -71,7 +73,7 @@ public class TelaCarrinho extends AppCompatActivity {
     }
 
     public void telaComprar(View view){
-        Intent intent = new Intent(this, TelaFinalizarCompra.class);
+        Intent intent = Actual.FinalizarCompra(this);
         startActivity(intent);
     }
 
@@ -97,11 +99,15 @@ public class TelaCarrinho extends AppCompatActivity {
                 startActivity(Product);
                 return true;
             case R.id.sair:
-                Intent Login = Actual.Out(this);
+                Intent Login = Actual.Sair(this);
                 startActivity(Login);
                 return true;
+            case R.id.meusPedidos:
+                Intent MeusPedidos = Actual.MeusPedidos(this);
+                startActivity(MeusPedidos);
+                return true;
             case R.id.perfilUsuario:
-                Intent UserProfile = Actual.perfUser(this);
+                Intent UserProfile = Actual.PerfUser(this);
                 startActivity(UserProfile);
                 return true;
             default:

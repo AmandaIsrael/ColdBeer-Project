@@ -137,6 +137,50 @@ public class ClienteDao {
         return cliente;
     }
 
+    public Cliente clienteLogin(String emailP, String senhaP){
+        Cliente cliente = null;
+        try {
+            String consulta = "SELECT * FROM cliente WHERE email = '" + emailP+
+                    "' AND senha = '"+ senhaP+"';";
+            Cursor cursor = le.rawQuery(consulta, null);
+
+            int indiceCodigo = cursor.getColumnIndex("cod_cliente");
+            int indiceEmail = cursor.getColumnIndex("email");
+            int indiceSenha = cursor.getColumnIndex("senha");
+            int indiceNome = cursor.getColumnIndex("nome");
+            int indiceTelefone = cursor.getColumnIndex("telefone");
+            int indiceIdade = cursor.getColumnIndex("idade");
+            int indiceCodEndereco = cursor.getColumnIndex("cod_endereco");
+
+            cursor.moveToFirst();
+
+            int codigo = cursor.getInt(indiceCodigo);
+            String email = cursor.getString(indiceEmail);
+            String senha = cursor.getString(indiceSenha);
+            String nome = cursor.getString(indiceNome);
+            String telefone = cursor.getString(indiceTelefone);
+            int idade = cursor.getInt(indiceIdade);
+            int cod_endereco = cursor.getInt(indiceCodEndereco);
+
+            cliente = new Cliente();
+
+            cliente.setCodEndereco(codigo);
+            cliente.setEmail(email);
+            cliente.setSenha(senha);
+            cliente.setNome(nome);
+            cliente.setTelefone(telefone);
+            cliente.setIdade(idade);
+            cliente.setCodEndereco(cod_endereco);
+
+            Log.i("id: ", codigo + " email: " + email + " senha: " + senha + " nome: " + nome +
+                    " telefone: " + telefone + " idade: " + idade + " cod_endereco: "+ cod_endereco);
+        }catch (Exception e){
+            Log.i("info", "erro");
+            e.printStackTrace();
+        }
+        return cliente;
+    }
+
     public void atualizarCliente(Cliente cliente) {
         try {
             ContentValues valores = new ContentValues();
