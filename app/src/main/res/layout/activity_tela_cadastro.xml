@@ -191,7 +191,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/botao"
-            android:onClick="cadastrar"
+            android:onClick="telaLogin"
             android:text="@string/btnCadastrar"
             android:textColor="@android:color/background_light"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -1,8 +1,10 @@
 package com.example.coldbeer.activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +38,8 @@ public class TelaCadastro extends AppCompatActivity {
     Endereco enderecoModel;
     EnderecoDao enderecoDao;
     ClienteDao clienteDao;
+    int retornoCadastro;
+    String titulo, mensagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +73,27 @@ public class TelaCadastro extends AppCompatActivity {
                 endereco.add(complemento.getText().toString());
 
                 controllerCadastro = new TelaCadastroController();
-                controllerCadastro.cadastrar(dadosCliente, endereco, getApplicationContext());
+                retornoCadastro = controllerCadastro.cadastrar(dadosCliente, endereco, getApplicationContext());
+
+                if(retornoCadastro == 0){
+                    titulo = "Erro";
+                    mensagem = "Seu cadastro não foi realizado com sucesso!";
+                }else{
+                    titulo = "Sucesso";
+                    mensagem = "Cadastro realizado!";
+                }
+
+                AlertDialog.Builder popupInserir = new AlertDialog.Builder(TelaCadastro.this);
+                popupInserir.setTitle(titulo);
+                popupInserir.setMessage(mensagem);
+                popupInserir.setCancelable(false);
+                popupInserir.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                popupInserir.create().show();
             }
         });
     }
@@ -78,26 +102,4 @@ public class TelaCadastro extends AppCompatActivity {
         Intent intent = new Intent(this, TelaLogin.class);
         startActivity(intent);
     }
-
-    public int random(){
-        int number = new Random().nextInt(10);
-        return number;
-    }
-
-   /* public void cadastrar(View view){
-        List<String> dadosCliente = new ArrayList<>();
-        dadosCliente.add(email.getText().toString());
-        dadosCliente.add(senha.getText().toString());
-        dadosCliente.add(nome.getText().toString());
-        dadosCliente.add(telefone.getText().toString());
-        dadosCliente.add(idade.getText().toString());
-
-        List<String> endereco = new ArrayList<>();
-        endereco.add(rua.getText().toString());
-        endereco.add(bairro.getText().toString());
-        endereco.add(numero.getText().toString());
-        endereco.add(complemento.getText().toString());
-
-        controllerCadastro.cadastrar(dadosCliente, endereco);
-    }*/
 }

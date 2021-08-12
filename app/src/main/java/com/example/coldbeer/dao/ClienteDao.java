@@ -25,7 +25,7 @@ public class ClienteDao {
         le = gatewayDb.getDatabase(false);
     }
 
-    public String inserirCliente(Cliente cliente){
+    public int inserirCliente(Cliente cliente){
         ContentValues valores;
         long resultado;
 
@@ -41,9 +41,9 @@ public class ClienteDao {
         //db.close();
 
         if(resultado == -1){
-            return ("Erro ao inserir na tabela cliente!");
+            return (0); //deu erro
         }else{
-            return ("Registro inserido com sucesso!");
+            return (1); //deu bom
         }
     }
 

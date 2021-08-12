@@ -14,12 +14,12 @@ public class TelaCadastroController {
     Endereco endereco;
     ClienteDao clienteDao = null;
     EnderecoDao enderecoDao = null;
-    int codEndereco;
+    int codEndereco, retornoInsercao;
 
     public void TelaCadastroController() {
     }
 
-    public void cadastrar(List<String> dadosPessoaisCliente, List<String> enderecoCliente, Context telaCadastro){
+    public int cadastrar(List<String> dadosPessoaisCliente, List<String> enderecoCliente, Context telaCadastro){
         cliente = new Cliente();
         endereco = new Endereco();
         cliente.setEmail(dadosPessoaisCliente.get(0));
@@ -34,15 +34,20 @@ public class TelaCadastroController {
         endereco.setFrete(random());
 
         enderecoDao = new EnderecoDao(telaCadastro);
-        enderecoDao.inserirEndereco(endereco);
         codEndereco = enderecoDao.buscarCodEndereco(endereco);
+        if(codEndereco == 0) {
+            enderecoDao.inserirEndereco(endereco);
+            codEndereco = enderecoDao.buscarCodEndereco(endereco);
+        }
         cliente.setCodEndereco(codEndereco);
 
         clienteDao = new ClienteDao(telaCadastro);
-        clienteDao.inserirCliente(cliente);
+        retornoInsercao = clienteDao.inserirCliente(cliente);
 
         clienteDao.listarClientes();
         enderecoDao.listarEnderecos();
+
+        return retornoInsercao;
     }
 
     public int random(){
