@@ -17,38 +17,13 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar" />
 
-        <EditText
-            android:id="@+id/txtBusca"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="70dp"
-            android:layout_marginRight="70dp"
-            android:autofillHints="@string/busca_inicio"
-            android:background="@drawable/caixa_texto"
-            android:ems="10"
-            android:hint="@string/vazia"
-            android:inputType="textPersonName"
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp"
-            android:paddingEnd="35dp"
-            android:paddingRight="35dp"
-            android:paddingBottom="4dp"
-            android:textColor="@color/design_default_color_on_primary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
         <ImageView
             android:id="@+id/imgKits"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="20dp"
             android:layout_marginRight="20dp"
             android:contentDescription="@string/imagem_kits_inicio"
@@ -56,7 +31,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtBusca"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:srcCompat="@drawable/kit_c_tacas" />
 
         <ImageView
@@ -167,20 +142,6 @@
                     app:layout_constraintGuide_percent="0.66" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-        <ImageView
-            android:id="@+id/btnPesquisar"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="6dp"
-            android:contentDescription="@string/busca_inicio"
-            app:layout_constraintBottom_toBottomOf="@+id/txtBusca"
-            app:layout_constraintEnd_toEndOf="@+id/txtBusca"
-            app:layout_constraintTop_toTopOf="@+id/txtBusca"
-            app:srcCompat="@drawable/ic_baseline_search_24" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

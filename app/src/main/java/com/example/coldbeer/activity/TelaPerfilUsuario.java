@@ -1,9 +1,11 @@
 package com.example.coldbeer.activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -39,9 +41,13 @@ public class TelaPerfilUsuario extends AppCompatActivity {
     EditText bairro;
     EditText complemento;
     Button atualizar;
+    Button deletar;
     Cliente userAtual;
     Endereco enderecoAtual;
     ClienteController clienteController;
+    Cliente retornoAtualizar;
+    String titulo, mensagem;
+    boolean retornoDeletar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +70,7 @@ public class TelaPerfilUsuario extends AppCompatActivity {
         bairro = (EditText)findViewById(R.id.txtBairro);
         complemento = (EditText)findViewById(R.id.txtComplemento);
         atualizar = (Button)findViewById(R.id.btnAtualizar);
+        deletar = (Button)findViewById(R.id.btnDeletar);
 
         email.setText(userAtual.getEmail());
         senha.setText(userAtual.getSenha());
@@ -74,6 +81,56 @@ public class TelaPerfilUsuario extends AppCompatActivity {
         numero.setText(String.valueOf(enderecoAtual.getNumero()));
         bairro.setText(enderecoAtual.getBairro());
         complemento.setText(enderecoAtual.getComplemento());
+
+
+        deletar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                titulo = "Atenção";
+                mensagem = "Você realmente deseja excluir seu perfil no Coldbeer?";
+
+                AlertDialog.Builder popupDeletar = new AlertDialog.Builder(TelaPerfilUsuario.this);
+                popupDeletar.setTitle(titulo);
+                popupDeletar.setMessage(mensagem);
+                popupDeletar.setCancelable(false);
+                popupDeletar.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        clienteController = new ClienteController();
+                        retornoDeletar = clienteController.deletar(userAtual.getCodCliente(), getApplicationContext());
+
+                        if(retornoDeletar){
+                            titulo = "Sucesso";
+                            mensagem = "Conta excluída!";
+                        }else{
+                            titulo = "Erro";
+                            mensagem = "Erro ao atualizar perfil!";
+                        }
+
+                        AlertDialog.Builder popupDeletarOk = new AlertDialog.Builder(TelaPerfilUsuario.this);
+                        popupDeletarOk.setTitle(titulo);
+                        popupDeletarOk.setMessage(mensagem);
+                        popupDeletarOk.setCancelable(false);
+                        popupDeletarOk.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if(retornoDeletar){
+                                    telaLogin(v);
+                                }
+                            }
+                        });
+                        popupDeletarOk.create().show();
+                    }
+                });
+                popupDeletar.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                popupDeletar.create().show();
+            }
+        });
 
         atualizar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,9 +151,35 @@ public class TelaPerfilUsuario extends AppCompatActivity {
                 endereco.add(String.valueOf(enderecoAtual.getCodEndereco()));
 
                 clienteController = new ClienteController();
-                clienteController.atualizar(dadosCliente, endereco, getApplicationContext());
+                retornoAtualizar = clienteController.atualizar(dadosCliente, endereco, getApplicationContext());
+
+                if(retornoAtualizar != null){
+                    titulo = "Sucesso";
+                    mensagem = "Usuário atualizado!";
+                    UsuarioAtualController.setUserAtual(retornoAtualizar, getApplicationContext());
+                }else{
+                    titulo = "Erro";
+                    mensagem = "Erro ao atualizar perfil!";
+                }
+
+                AlertDialog.Builder popupAtualizar = new AlertDialog.Builder(TelaPerfilUsuario.this);
+                popupAtualizar.setTitle(titulo);
+                popupAtualizar.setMessage(mensagem);
+                popupAtualizar.setCancelable(false);
+                popupAtualizar.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                popupAtualizar.create().show();
             }
         });
+    }
+
+    public void telaLogin(View view){
+        Intent intent = Actual.Sair(this);
+        startActivity(intent);
     }
 
     @Override

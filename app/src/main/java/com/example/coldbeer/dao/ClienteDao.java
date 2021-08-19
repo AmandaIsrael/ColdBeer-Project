@@ -164,7 +164,7 @@ public class ClienteDao {
 
             cliente = new Cliente();
 
-            cliente.setCodEndereco(codigo);
+            cliente.setCodCliente(codigo);
             cliente.setEmail(email);
             cliente.setSenha(senha);
             cliente.setNome(nome);
@@ -181,7 +181,7 @@ public class ClienteDao {
         return cliente;
     }
 
-    public void atualizarCliente(Cliente cliente) {
+    public boolean atualizarCliente(Cliente cliente) {
         try {
             ContentValues valores = new ContentValues();
             valores.put("email", cliente.getEmail());
@@ -193,21 +193,23 @@ public class ClienteDao {
 
             String[] codigo = {String.valueOf(cliente.getCodCliente())};
             escreve.update("cliente", valores, "cod_cliente = ?", codigo);
-
+            return true;
         } catch (Exception e) {
             Log.i("info", "erro");
             e.printStackTrace();
+            return false;
         }
     }
 
-    public void deletarCliente(int cod_cliente) {
-        Cliente cliente;
+    public boolean deletarCliente(int cod_cliente) {
         try {
             String[] codigo = {String.valueOf(cod_cliente)};
             escreve.delete("cliente", "cod_cliente = ?", codigo);
+            return true;
         } catch (Exception e) {
             Log.i("info", "erro");
             e.printStackTrace();
+            return false;
         }
     }
 }

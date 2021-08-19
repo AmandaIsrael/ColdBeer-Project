@@ -15,6 +15,7 @@ public class ClienteController {
     ClienteDao clienteDao = null;
     EnderecoDao enderecoDao = null;
     int codEndereco, retornoInsercao;
+    boolean retornoAtualizar, retornoDeletar;
 
     public void TelaCadastroController() {
     }
@@ -50,7 +51,7 @@ public class ClienteController {
         return retornoInsercao;
     }
 
-    public int atualizar(List<String> dadosPessoaisCliente, List<String> enderecoCliente, Context telaCadastro){
+    public Cliente atualizar(List<String> dadosPessoaisCliente, List<String> enderecoCliente, Context telaCadastro){
         cliente = new Cliente();
         endereco = new Endereco();
         cliente.setEmail(dadosPessoaisCliente.get(0));
@@ -66,29 +67,37 @@ public class ClienteController {
         endereco.setNumero(Integer.parseInt(enderecoCliente.get(2)));
         endereco.setComplemento(enderecoCliente.get(3));
         endereco.setCodEndereco(Integer.parseInt(enderecoCliente.get(4)));
-        endereco.setFrete(random());
 
         enderecoDao = new EnderecoDao(telaCadastro);
         codEndereco = enderecoDao.buscarCodEndereco(endereco);
         if(codEndereco == 0) {
+            endereco.setFrete(random());
             enderecoDao.inserirEndereco(endereco);
             codEndereco = enderecoDao.buscarCodEndereco(endereco);
         }
         cliente.setCodEndereco(codEndereco);
 
         clienteDao = new ClienteDao(telaCadastro);
-        retornoInsercao = clienteDao.inserirCliente(cliente);
+        retornoAtualizar = clienteDao.atualizarCliente(cliente);
 
         clienteDao.listarClientes();
         enderecoDao.listarEnderecos();
 
-        return retornoInsercao;
+        if(retornoAtualizar){
+           return cliente;
+        }
+        cliente = null;
+        return cliente;
     }
-
-
 
     public int random(){
         int number = new Random().nextInt(10);
         return number;
+    }
+
+    public boolean deletar(int codCliente, Context telaPerfilUser){
+        clienteDao = new ClienteDao(telaPerfilUser);
+        retornoDeletar = clienteDao.deletarCliente(codCliente);
+        return retornoDeletar;
     }
 }

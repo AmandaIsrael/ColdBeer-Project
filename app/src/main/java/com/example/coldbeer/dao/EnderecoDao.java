@@ -92,8 +92,7 @@ public class EnderecoDao {
         try {
             String consulta = "SELECT cod_endereco FROM endereco WHERE rua = '" + endereco.getRua()+
                     "' AND bairro = '" + endereco.getBairro()+
-                    "' AND numero = " + endereco.getNumero()+
-                    " AND frete = " + endereco.getFrete() +";";
+                    "' AND numero = " + endereco.getNumero()+";";
             Cursor cursor = le.rawQuery(consulta, null);
 
             int indiceCodigo = cursor.getColumnIndex("cod_endereco");
