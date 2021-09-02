@@ -47,6 +47,7 @@ public class TelaLogin extends AppCompatActivity {
                     txtErro.setText("Email ou senha incorretos!");
                 }else {
                     UsuarioAtualController.setUserAtual(cliente, getApplicationContext());
+                    popularProdutos.cadastrarProduto(getApplicationContext());
                     telaInicio(v);
                 }
             }

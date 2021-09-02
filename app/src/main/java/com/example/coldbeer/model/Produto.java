@@ -5,7 +5,7 @@ public class Produto {
     String nome, teorAlcoolico, descricao;
     Double precoUnitario;
     Boolean categoria;
-    //categoria -> 0=cerveja, 1=kit
+    //categoria -> false=cerveja, true=kit
 
     public Produto(String nome, String teorAlcoolico, String descricao, Double precoUnitario, Boolean categoria) {
         this.nome = nome;
@@ -49,7 +49,7 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public Double getPrecoUnitario() {
+    public double getPrecoUnitario() {
         return precoUnitario;
     }
 

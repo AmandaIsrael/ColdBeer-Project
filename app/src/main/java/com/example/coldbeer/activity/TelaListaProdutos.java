@@ -2,6 +2,9 @@ package com.example.coldbeer.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -12,12 +15,22 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.coldbeer.R;
+import com.example.coldbeer.controller.AdapterListaProdutos;
 import com.example.coldbeer.controller.TelasGateway;
+import com.example.coldbeer.dao.ProdutoDao;
+import com.example.coldbeer.model.Produto;
+
+import java.util.List;
 
 public class TelaListaProdutos extends AppCompatActivity {
 
     private TelasGateway Actual;
     private Intent telaItem;
+    RecyclerView listaProduto;
+    RecyclerView.LayoutManager manager;
+    AdapterListaProdutos adapter;
+    ProdutoDao daoProduto;
+    List<Produto> listaBancoProdutos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +39,20 @@ public class TelaListaProdutos extends AppCompatActivity {
 
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
+
+        int[] imagens = {R.drawable.cerveja1,R.drawable.cerveja2,
+                R.drawable.cerveja3, R.drawable.cerveja4, R.drawable.cerveja5};
+
+        listaProduto = findViewById(R.id.recyclerViewProdutos);
+        //RecyclerView.LayoutManager manager = new LinearLayoutManager(getApplicationContext());
+        manager = new GridLayoutManager(this, 2);
+        listaProduto.setHasFixedSize(true);
+        listaProduto.setLayoutManager(manager);
+
+        daoProduto = new ProdutoDao(getApplicationContext());
+        listaBancoProdutos = daoProduto.listarProdutos();
+        adapter = new AdapterListaProdutos(listaBancoProdutos, imagens);
+        listaProduto.setAdapter(adapter);
 
         Actual = TelasGateway.getTelas();
     }
