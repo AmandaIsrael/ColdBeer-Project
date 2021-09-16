@@ -26,21 +26,23 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="70dp"
             android:layout_marginRight="70dp"
+            android:autofillHints="@string/busca_tela_produtos"
             android:background="@drawable/caixa_texto"
             android:ems="10"
-            android:hint="@string/vazia"
+            android:hint="Digite o nome do produto"
             android:inputType="textPersonName"
+            android:paddingStart="10dp"
             android:paddingLeft="10dp"
+            android:paddingEnd="35dp"
             android:paddingRight="35dp"
             android:paddingBottom="4dp"
             android:textColor="@color/design_default_color_on_primary"
+            android:textColorHint="@color/fundoLogin"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            android:paddingEnd="35dp"
-            android:paddingStart="10dp"
-            android:autofillHints="@string/busca_tela_produtos" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
         <ImageView
             android:id="@+id/btnPesquisar"
@@ -50,11 +52,12 @@
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="6dp"
+            android:contentDescription="@string/pesquisar_produtos_tela_produtos"
+            android:onClick="buscarProduto"
             app:layout_constraintBottom_toBottomOf="@+id/txtBusca"
             app:layout_constraintEnd_toEndOf="@+id/txtBusca"
             app:layout_constraintTop_toTopOf="@+id/txtBusca"
-            app:srcCompat="@drawable/ic_baseline_search_24"
-            android:contentDescription="@string/pesquisar_produtos_tela_produtos" />
+            app:srcCompat="@drawable/ic_baseline_search_24" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline11"

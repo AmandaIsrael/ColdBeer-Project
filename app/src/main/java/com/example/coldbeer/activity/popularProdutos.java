@@ -22,7 +22,7 @@ public class popularProdutos {
                 "6,5%",
                 "Apresenta corpo mais alto e amargor mais equilibrado com base de malte, coloração âmbar, além das inebiantes notas florais e terrosas no aroma.",
                 14.34, false);*/
-        ProdutoDao daoProduto = new ProdutoDao(tela);
+       /* ProdutoDao daoProduto = new ProdutoDao(tela);
         Produto produto = new Produto();
         produto = daoProduto.buscarProduto(2);
         produto.setNome("Blondine Bad Moose");
@@ -30,8 +30,8 @@ public class popularProdutos {
 
         /*daoProduto.inserirProduto(produto);
         daoProduto.inserirProduto(produto2);
-        daoProduto.inserirProduto(produto3);*/
+        daoProduto.inserirProduto(produto3);
 
-        daoProduto.listarProdutos();
+        daoProduto.listarProdutos();*/
     }
 }

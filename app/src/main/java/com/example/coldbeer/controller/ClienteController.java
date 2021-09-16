@@ -1,7 +1,6 @@
 package com.example.coldbeer.controller;
 
 import android.content.Context;
-
 import com.example.coldbeer.dao.ClienteDao;
 import com.example.coldbeer.dao.EnderecoDao;
 import com.example.coldbeer.model.Cliente;

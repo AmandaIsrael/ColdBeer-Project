@@ -171,6 +171,47 @@ public class ProdutoDao {
         return produto;
     }
 
+    public List<Produto> buscarProdutoPorNome(String nomeProduto){
+        List<Produto> listaProduto = new ArrayList<>();
+        try {
+            String consulta = "SELECT * FROM produto WHERE nome LIKE '%" + nomeProduto+ "%'";
+            Cursor cursor = le.rawQuery(consulta, null);
+
+            int indiceCodigo = cursor.getColumnIndex("cod_produto");
+            int indiceNome = cursor.getColumnIndex("nome");
+            int indicePrecoUnitario = cursor.getColumnIndex("preco_unitario");
+            int indiceCategoria = cursor.getColumnIndex("categoria");
+            int indiceTeorAlcoolico = cursor.getColumnIndex("teor_alcoolico");
+            int indiceDescricao = cursor.getColumnIndex("descricao");
+
+            cursor.moveToFirst();
+
+            int codigo = cursor.getInt(indiceCodigo);
+            String nome = cursor.getString(indiceNome);
+            double precoUnit = cursor.getDouble(indicePrecoUnitario);
+            boolean categoria = Boolean.parseBoolean(cursor.getString(indiceCategoria));
+            String teorAlc = cursor.getString(indiceTeorAlcoolico);
+            String descricao = cursor.getString(indiceDescricao);
+
+            Produto produto = new Produto();
+            produto.setCodProduto(codigo);
+            produto.setNome(nome);
+            produto.setPrecoUnitario(precoUnit);
+            produto.setCategoria(categoria);
+            produto.setTeorAlcoolico(teorAlc);
+            produto.setDescricao(descricao);
+
+            listaProduto.add(produto);
+
+            Log.i("id: ", codigo + " nome: " + nome + " preco unitario: " + precoUnit + " categoria: " + categoria +
+                    " teor alcoolico: " + teorAlc + " descricao: " + descricao);
+        }catch (Exception e){
+            Log.i("info", "erro");
+            e.printStackTrace();
+        }
+        return listaProduto;
+    }
+
     public void atualizarProduto(Produto produto) {
         try {
             ContentValues valores = new ContentValues();

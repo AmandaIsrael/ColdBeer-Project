@@ -10,15 +10,21 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.coldbeer.R;
+import com.example.coldbeer.controller.ProdutoSelecionado;
 import com.example.coldbeer.controller.TelasGateway;
+import com.example.coldbeer.model.Produto;
 
 public class TelaItem extends AppCompatActivity {
 
     private TelasGateway Actual;
     private Intent telaCarrinho;
-
+    TextView txtPreco, txtTeorAlc, txtTitulo, txtDescricao;
+    Produto produto;
+    public static ImageView imagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +34,23 @@ public class TelaItem extends AppCompatActivity {
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
 
+        txtTitulo = findViewById(R.id.txtTitulo);
+        txtTeorAlc = findViewById(R.id.txtTeorAlc);
+        txtPreco = findViewById(R.id.txtPreco);
+        txtDescricao = findViewById(R.id.txtDescricao);
+
+        imagem = findViewById(R.id.imgProduto);
+
         telaCarrinho = new Intent(this, TelaCarrinho.class);
+
+        produto = new Produto();
+        produto = ProdutoSelecionado.getProdutoSelecionado();
+
+        txtTitulo.setText(produto.getNome());
+        txtTeorAlc.setText(produto.getTeorAlcoolico());
+        txtPreco.setText(String.valueOf(produto.getPrecoUnitario()));
+        txtDescricao.setText(produto.getDescricao());
+        imagem.setImageResource(ProdutoSelecionado.getImagemProduto());
 
         Actual = TelasGateway.getTelas();
     }
