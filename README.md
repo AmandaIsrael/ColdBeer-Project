@@ -1,4 +1,4 @@
-# Projeto **ColdBear**    <img src="C:\Users\amand\Desktop\Unioeste\(C.C) - 3\TDS\Projeto\Parte01\Resources\cold beer logo (1).png" style="zoom:25%;" /> 
+# Projeto **ColdBeer**    <img src="C:\Users\amand\Desktop\Unioeste\(C.C) - 3\TDS\Projeto\Parte01\Resources\cold beer logo (1).png" style="zoom:25%;" /> 
 
 Amanda Israel Graeff Borges e Roberta Aparecida da Silva Alcantara
 
